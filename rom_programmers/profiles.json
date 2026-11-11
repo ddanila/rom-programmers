@@ -43,5 +43,14 @@
     "experimental": true,
     "setup": "J9/J10 toward DB25; Normal 28-pin routing; DIP ON 3,5,7,8,9. Pin1 at ZIF3, notch toward lever. VCC 5 V; programming VPP off.",
     "voltage": null
+  },
+  "t48-2716-read": {
+    "backend": "t48",
+    "size": 2048,
+    "read_command": null,
+    "program": false,
+    "experimental": true,
+    "setup": "Standard single-supply M2716 DIP24 placement per T48 diagram. Explicit pin-control read: VCC and read VPP at 5 V; no programming pulses. Does not apply to three-supply TMS2716.",
+    "voltage": null
   }
 }

@@ -67,6 +67,9 @@ Supported profiles:
 - `t48-rf2`: experimental 2 KiB RF2 read/program via explicit pin control.
   Contact preflight, matching serial, per-byte verify and final fresh reads.
   The known-bad native M2716 read/verify path is never selected.
+- `t48-2716-read`: read-only standard single-supply M2716, using the same
+  explicit 5 V pin-control read path. No programming capability; excludes
+  three-supply TMS2716. Physically verified against PC001's known S550 ROM.
 - `willem-2732a-21v`: 4 KiB read/program for qualified 21 V, 50 ms 2732A parts.
   The DOS writer requires an erased chip, checks for first-byte aliasing and
   performs full verification after a power cycle. Fixed LPT base 378h.

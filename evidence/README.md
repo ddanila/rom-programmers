@@ -23,3 +23,17 @@ Previous physical qualification remains at its immutable locations:
 Only relevant logs and summaries are imported here. Original source histories,
 firmware artifacts, readbacks, and inventory links remain intact. Matching
 all-zero/all-FF diagnostic captures are not added to the firmware dumps repo.
+
+## Positive M2716 read check — 2026-11-11
+
+After the owner installed PC001's M2716 (suffix uncertain, reported IFI/1F1),
+`t48-2716-read` passed contact checking and two complete 2048-byte reads. Both
+match the public S550 image byte-for-byte: SHA-256
+`37e58472a049e1785c3521ec6b23c2d269d93fa5fede696dc7bd72eabb4af031`,
+CRC32 `0a96c754`, embedded identifier `111715W070887`. Outputs were reset after
+each read; no programming was performed. This qualifies the shared read path
+on this specimen, not RF2 programming or all 2716 variants.
+
+[PC001 inventory record](https://github.com/ddanila/vintage-computer-inventory/tree/main/items/PC001-robotron-1715m/evidence/20261111-m2716-s550-t48).
+The already-public firmware is retained only in the local session, not copied
+into the dumps repository or this evidence directory.

@@ -138,6 +138,12 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(self.call('program',extra=['--setup-confirmed']),1)
         self.assertFalse((self.root/'calls.log').exists())
 
+    def test_t48_2716_profile_reads_but_cannot_program(self):
+        self.assertEqual(self.call('program','t48-2716-read',extra=['--setup-confirmed']),1)
+        self.assertFalse((self.root/'calls.log').exists())
+        self.assertEqual(self.call('read','t48-2716-read'),0)
+        self.assertEqual(self.record()['request']['profile'],'t48-2716-read')
+
     def test_read_only_profile_rejects_program(self):
         self.assertEqual(self.call('program','willem-2716-read',extra=['--setup-confirmed']),1)
         self.assertFalse((self.root/'calls.log').exists())
