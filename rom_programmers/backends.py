@@ -12,7 +12,7 @@ class T48:
 
     def read(self, name):
         out = self.session.path / (name + '.bin')
-        log = self.session.run(name, self.command() + ['read', out], outputs=[out])
+        log = self.session.run(name, self.command() + [self.profile.get('read_command') or 'read', out], outputs=[out])
         if 'Reset pin drivers: OK' not in log.read_text(errors='replace'):
             raise RuntimeError('T48 read lacks a successful pin-driver reset report')
         self.session.record['shutdown'] = 'reported-off'

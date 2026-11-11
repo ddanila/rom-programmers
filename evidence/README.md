@@ -37,3 +37,14 @@ on this specimen, not RF2 programming or all 2716 variants.
 [PC001 inventory record](https://github.com/ddanila/vintage-computer-inventory/tree/main/items/PC001-robotron-1715m/evidence/20261111-m2716-s550-t48).
 The already-public firmware is retained only in the local session, not copied
 into the dumps repository or this evidence directory.
+
+## Positive PC003 2732 read check — 2026-11-11
+
+PC003's sticker-covered, owner-identified 2732 passed contact checks and two
+4096-byte reads through `t48-2732-read`. CRC32 `4918fb91` and SHA-1
+`cd9f45cc3546bcaad7254b92c5d501c40e2ef0b2` match MAME's `81-232.u47`
+boot ROM for Kaypro boards 81-240. Both address halves are distinct. No write
+was performed; both reads reported reset. The exact underlying chip model
+remains unknown. Known firmware is kept locally, not added to dumps.
+
+[PC003 inventory record](https://github.com/ddanila/vintage-computer-inventory/tree/main/items/PC003-kaypro-2/evidence/20261111-2732-81-232-t48).

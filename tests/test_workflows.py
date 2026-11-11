@@ -144,6 +144,15 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(self.call('read','t48-2716-read'),0)
         self.assertEqual(self.record()['request']['profile'],'t48-2716-read')
 
+    def test_t48_2732_read_is_4k_and_never_programs(self):
+        self.prepare(4096)
+        self.assertEqual(self.call('program','t48-2732-read',extra=['--setup-confirmed']),1)
+        self.assertFalse((self.root/'calls.log').exists())
+        self.assertEqual(self.call('read','t48-2732-read'),0)
+        calls=[json.loads(line) for line in (self.root/'calls.log').read_text().splitlines()]
+        self.assertEqual([call[2] for call in calls],['read2732','read2732'])
+        self.assertEqual((self.session/'readback.bin').stat().st_size,4096)
+
     def test_read_only_profile_rejects_program(self):
         self.assertEqual(self.call('program','willem-2716-read',extra=['--setup-confirmed']),1)
         self.assertFalse((self.root/'calls.log').exists())

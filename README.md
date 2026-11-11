@@ -70,6 +70,9 @@ Supported profiles:
 - `t48-2716-read`: read-only standard single-supply M2716, using the same
   explicit 5 V pin-control read path. No programming capability; excludes
   three-supply TMS2716. Physically verified against PC001's known S550 ROM.
+- `t48-2732-read`: read-only 4 KiB standard 2732. A11 is on pin 21,
+  OE/VPP is held low on pin 20, and only pin 24 receives 5 V. The chip
+  marking can remain covered because no programming voltage is selected.
 - `willem-2732a-21v`: 4 KiB read/program for qualified 21 V, 50 ms 2732A parts.
   The DOS writer requires an erased chip, checks for first-byte aliasing and
   performs full verification after a power cycle. Fixed LPT base 378h.

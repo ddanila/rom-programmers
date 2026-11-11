@@ -52,5 +52,14 @@
     "experimental": true,
     "setup": "Standard single-supply M2716 DIP24 placement per T48 diagram. Explicit pin-control read: VCC and read VPP at 5 V; no programming pulses. Does not apply to three-supply TMS2716.",
     "voltage": null
+  },
+  "t48-2732-read": {
+    "backend": "t48",
+    "size": 4096,
+    "read_command": "read2732",
+    "program": false,
+    "experimental": true,
+    "setup": "Standard 2732 DIP24 placement per T48 diagram. VCC 5 V on pin 24; GND pin 12; A11 on pin 21; CE pin 18 and OE/VPP pin 20 low. No programming voltage or pulses; sticker may remain in place.",
+    "voltage": null
   }
 }
