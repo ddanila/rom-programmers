@@ -1,0 +1,26 @@
+test_blank_read_has_two_captures (test_workflows.WorkflowTests.test_blank_read_has_two_captures) ... ok
+test_changed_completed_output_blocks_resume (test_workflows.WorkflowTests.test_changed_completed_output_blocks_resume) ... ok
+test_disagreeing_reads_fail (test_workflows.WorkflowTests.test_disagreeing_reads_fail) ... ok
+test_dosravi_uncertain_write_needs_same_agent_assertion (test_workflows.WorkflowTests.test_dosravi_uncertain_write_needs_same_agent_assertion) ... ok
+test_incompatible_image_never_writes (test_workflows.WorkflowTests.test_incompatible_image_never_writes) ... ok
+test_interrupted_step_is_uncertain (test_workflows.WorkflowTests.test_interrupted_step_is_uncertain) ... ok
+test_lock_blocks_other_process (test_workflows.WorkflowTests.test_lock_blocks_other_process) ... ok
+test_missing_shutdown_marker_rejects_success (test_workflows.WorkflowTests.test_missing_shutdown_marker_rejects_success) ... ok
+test_nonblank_rejected (test_workflows.WorkflowTests.test_nonblank_rejected) ... ok
+test_prepare_image_explicit_transform (test_workflows.WorkflowTests.test_prepare_image_explicit_transform) ... ok
+test_read_only_profile_rejects_program (test_workflows.WorkflowTests.test_read_only_profile_rejects_program) ... ok
+test_resume_changed_image_rejected (test_workflows.WorkflowTests.test_resume_changed_image_rejected) ... ok
+test_setup_and_voltage_guard (test_workflows.WorkflowTests.test_setup_and_voltage_guard) ... ok
+test_short_read_fails (test_workflows.WorkflowTests.test_short_read_fails) ... ok
+test_size_checked_before_hardware (test_workflows.WorkflowTests.test_size_checked_before_hardware) ... ok
+test_t48_program_verifies_two_fresh_reads (test_workflows.WorkflowTests.test_t48_program_verifies_two_fresh_reads) ... ok
+test_tool_hash_guard (test_workflows.WorkflowTests.test_tool_hash_guard) ... ok
+test_uncertain_t48_write_not_replayed (test_workflows.WorkflowTests.test_uncertain_t48_write_not_replayed) ... ok
+test_verify_mismatch_fails (test_workflows.WorkflowTests.test_verify_mismatch_fails) ... ok
+test_willem_lost_reply_recovers_same_execution (test_workflows.WorkflowTests.test_willem_lost_reply_recovers_same_execution) ... ok
+test_willem_write_and_upload_reuse (test_workflows.WorkflowTests.test_willem_write_and_upload_reuse) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.965s
+
+OK

@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-11",
+  "dependencies": {
+    "minipro": {
+      "url": "https://github.com/ddanila/minipro.git",
+      "revision": "f154f5b46a0c8b7cbf2bfb07f23d7d3e6f86ec78"
+    },
+    "willem": {
+      "url": "https://github.com/ddanila/willem-v30.git",
+      "revision": "ff2a7c35571caebb3ecece6087b6f62db8afa88b"
+    },
+    "dosravi": {
+      "url": "https://github.com/ddanila/dosravi.git",
+      "revision": "a6275b3ba5ac775a39baf40a95665d959b7497d3",
+      "submodules": {
+        "third_party/ravi": "44f25b4f836e3d6b0484cb0cf79bd43dfbb5cfdc"
+      }
+    }
+  },
+  "baseline": {
+    "url": "https://github.com/ddanila/willem-v30/tree/ff2a7c3/programming/t48-rf2-w4-20261111",
+    "image_sha256": "2a60fcc34fd3782696ced9ba7fd64382d991cffa133a6d30e25930e51ae0a50b",
+    "manifest_sha256": "4f82f560f9d19eba7e68238d0453681e044f7674e5418ae8a52ff2657d18df96"
+  },
+  "shared_tests": 21,
+  "dosravi_cli_tests": 10,
+  "dosravi_execution_tests": 4,
+  "physical_current": {
+    "programmer": "T48",
+    "serial": "6MNNWV7B0LLRDYCAA5PF5744",
+    "writes_performed": 0,
+    "new_read_matches_baseline_reader": true,
+    "read_value": "all zero",
+    "contact_test": "failed on every non-ground pin",
+    "interpretation": "empty/disconnected socket indicated; physical placement not confirmed",
+    "shared_verify": "correctly rejected mismatching image",
+    "contact_guard": "now rejects before powering chip",
+    "fresh_positive_verification": "pending chip insertion/contact"
+  },
+  "willem": "contract simulations and pinned existing execution tests; no new hardware operations",
+  "bootstrap": "all three dependencies and RAVI submodule fetched at pins; C and DOS builds and Python installation succeeded",
+  "minipro_regressions": [
+    "pulse option parsing and range",
+    "PROM buffers under AddressSanitizer",
+    "T48 pull-down output-cache invalidation"
+  ],
+  "willem_rebuild_matches_qualified_binaries": {
+    "reader": "93069972fe2386ceaa55242ea97d82d9e7ff1fbadda44636835cc9d82abdc6d6",
+    "writer": "cb07d957fdcd7ee4d3942df7b7ce61820bd48d523507173e8c608f8d0c7a9654"
+  }
+}

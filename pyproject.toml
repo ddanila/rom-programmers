@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rom-programmers"
+version = "0.1.0"
+description = "Reproducible ROM bench workflows for T48 and Willem"
+requires-python = ">=3.11"
+license = {text = "GPL-3.0-or-later"}
+
+[project.scripts]
+rom-programmers = "rom_programmers.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["rom_programmers*"]
+
+[tool.setuptools.package-data]
+rom_programmers = ["profiles.json"]

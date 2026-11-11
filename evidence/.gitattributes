@@ -1,0 +1,2 @@
+# Raw logs are evidence, including terminal escapes and whitespace.
+*.log -text -whitespace

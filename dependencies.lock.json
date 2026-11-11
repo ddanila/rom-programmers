@@ -1,0 +1,17 @@
+{
+  "minipro": {
+    "url": "https://github.com/ddanila/minipro.git",
+    "revision": "f154f5b46a0c8b7cbf2bfb07f23d7d3e6f86ec78"
+  },
+  "willem": {
+    "url": "https://github.com/ddanila/willem-v30.git",
+    "revision": "ff2a7c35571caebb3ecece6087b6f62db8afa88b"
+  },
+  "dosravi": {
+    "url": "https://github.com/ddanila/dosravi.git",
+    "revision": "a6275b3ba5ac775a39baf40a95665d959b7497d3",
+    "submodules": {
+      "third_party/ravi": "44f25b4f836e3d6b0484cb0cf79bd43dfbb5cfdc"
+    }
+  }
+}

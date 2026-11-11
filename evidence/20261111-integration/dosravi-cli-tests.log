@@ -1,0 +1,22 @@
+test_ids_persist_and_identity_changes_are_rejected (test_cli.ExecutionManifestTests.test_ids_persist_and_identity_changes_are_rejected) ... ok
+test_exactly_one_timing_dimension_must_decrease (test_cli.ProfileSweepTests.test_exactly_one_timing_dimension_must_decrease) ... ok
+test_power_is_a_dimension_and_build_must_remain_fixed (test_cli.ProfileSweepTests.test_power_is_a_dimension_and_build_must_remain_fixed) ... ok
+test_willem_v2_profile_sequence_is_one_variable_at_a_time (test_cli.ProfileSweepTests.test_willem_v2_profile_sequence_is_one_variable_at_a_time) ... ok
+test_final_verify_is_an_explicit_single_read_mode (test_cli.WillemFinalVerifyArgumentTests.test_final_verify_is_an_explicit_single_read_mode) ... ok
+test_current_stdout_precedes_stale_append_log (test_cli.WillemWriteArgumentTests.test_current_stdout_precedes_stale_append_log) ... ok
+test_m2764a_evidence_retains_final_verify_hold (test_cli.WillemWriteArgumentTests.test_m2764a_evidence_retains_final_verify_hold) ... ok
+test_m2764a_program_phase_is_an_explicit_device_choice (test_cli.WillemWriteArgumentTests.test_m2764a_program_phase_is_an_explicit_device_choice) ... ok
+test_post_write_read_count_is_bounded (test_cli.WillemWriteArgumentTests.test_post_write_read_count_is_bounded) ... usage: dosravi willem-write [-h] --program PROGRAM --device {28C64,M2764A}
+                            --image IMAGE --gate GATE [--lpt LPT]
+                            --read-profile READ_PROFILE
+                            [--post-write-count 1..10] --output OUTPUT
+                            [--write] [--program-phase-only]
+                            [--trace-on-failure] [--note KEY=VALUE]
+dosravi willem-write: error: argument --post-write-count: invalid choice: '0' (choose from 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+ok
+test_post_write_read_defaults_to_one (test_cli.WillemWriteArgumentTests.test_post_write_read_defaults_to_one) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.012s
+
+OK

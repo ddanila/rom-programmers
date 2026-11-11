@@ -1,0 +1,24 @@
+Package libusb-1.0 was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libusb-1.0.pc'
+to the PKG_CONFIG_PATH environment variable
+Package 'libusb-1.0' not found
+Package libusb-1.0 was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libusb-1.0.pc'
+to the PKG_CONFIG_PATH environment variable
+Package 'libusb-1.0' not found
+gcc -g -O0 -Wall -Wextra -W -Wno-sign-compare -Wno-unused-parameter -I/tmp/minipro-build-deps/root/usr/include/libusb-1.0  -DSHARE_INSTDIR="\"/home/ddanila/fun/minipro-bench\"" -Isrc tests/test-pulse-option.c src/xml.o src/jedec.o src/ihex.o src/srec.o src/database.o src/bitbang.o src/prom.o src/minipro.o src/tl866a.o src/tl866iiplus.o src/t48.o src/t56.o src/t76.o src/version.o src/cdecode.o src/cencode.o src/logic_detect.o src/usb_nix.o -l:libusb-1.0.so.0 -lz  -o test-pulse-option
+./test-pulse-option
+Pulse short/long option and range: PASS
+gcc -g -fsanitize=address -Isrc tests/test-prom-buffers.c src/bitbang.c -ffunction-sections -Wl,--gc-sections -o test-prom-buffers
+./test-prom-buffers
+PROM 56-entry pin vectors: PASS
+python3 tests/test-rf2-generated.py ./rf2-mock
+full: PASS
+one: PASS
+incompatible: PASS
+verify-fail: PASS
+overvolt: PASS
+contact-fail: PASS
+gcc -g -ffunction-sections -fdata-sections -Isrc tests/test-t48-cache.c -Wl,--gc-sections -o test-t48-cache
+./test-t48-cache
+T48 pull-down output restore: PASS

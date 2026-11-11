@@ -1,0 +1,18 @@
+{
+  "t48": {
+    "serial": "SET_T48_SERIAL",
+    "rf2": "../.tools/minipro/rf2-direct",
+    "program_vpp": 25
+  },
+  "willem": {
+    "port": "/dev/serial/by-id/SET_ADAPTER",
+    "baud": 57600,
+    "lpt": "378",
+    "program_vpp": 21,
+    "exec_timeout": 1800,
+    "dosravi": ["../.tools/venv/bin/python", "-m", "dosravi.cli"],
+    "cwd": "../.tools/dosravi",
+    "reader": "../.tools/willem/build/dos/WILLEM.COM",
+    "writer": "../.tools/willem/build/dos/PG2732A.COM"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "t48-rf2": {
+    "backend": "t48",
+    "size": 2048,
+    "read_command": null,
+    "program": true,
+    "experimental": true,
+    "setup": "Standard DIP24 RF2 placement according to T48 device diagram. Read VCC/VPP 5 V; programming VPP 23.5\u201325.5 V. Native M2716 read/verify is excluded.",
+    "voltage": 25
+  },
+  "willem-2732a-21v": {
+    "backend": "willem",
+    "size": 4096,
+    "read_command": "R2732",
+    "program": true,
+    "experimental": false,
+    "setup": "PCB5.0E tested PCB3B mode: J9/J10 toward DB25; special 2732 routing; DIP ON 7,8,9 only. DIP24 pin 1 at ZIF5, notch toward lever. VCC 5 V; measured VPP 21 V. Only qualified 21 V/50 ms 2732A parts.",
+    "voltage": 21
+  },
+  "willem-2716-read": {
+    "backend": "willem",
+    "size": 2048,
+    "read_command": "RRF5",
+    "program": false,
+    "experimental": true,
+    "setup": "J9/J10 toward DB25; special 2716 routing, both shunts ZIF-side; DIP ON 1,2,6,8,9. Pin1 at ZIF5, notch toward lever. VCC 5 V, read VPP=VCC.",
+    "voltage": null
+  },
+  "willem-2764-read": {
+    "backend": "willem",
+    "size": 8192,
+    "read_command": "R2764",
+    "program": false,
+    "experimental": false,
+    "setup": "J9/J10 toward DB25; Normal 28-pin routing; DIP ON 1,2,4,6,9. Pin1 at ZIF3, notch toward lever. VCC 5 V; programming VPP off.",
+    "voltage": null
+  },
+  "willem-27512-read": {
+    "backend": "willem",
+    "size": 65536,
+    "read_command": "R27512",
+    "program": false,
+    "experimental": true,
+    "setup": "J9/J10 toward DB25; Normal 28-pin routing; DIP ON 3,5,7,8,9. Pin1 at ZIF3, notch toward lever. VCC 5 V; programming VPP off.",
+    "voltage": null
+  }
+}
