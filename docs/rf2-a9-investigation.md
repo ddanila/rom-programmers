@@ -152,3 +152,23 @@ Do not confuse the Willem ZIF26 position with T48 ZIF38; chip-pin numbering is
 the common reference. The lower-capacity RF21/RF22 variants disconnect pin 19,
 so a normal lower-capacity variant is not automatically an explanation for a
 missing pin-22 address bit.
+
+## Follow-up: new blank specimen, one-pulse probe
+
+The user inserted a new blank RF2 for testing. Two fresh explicit-backend reads
+were identical and all FF. With a hard maximum of one changed byte, the pinned
+writer programmed FEh at 0201h in one pulse (reported host window 50.972 ms).
+Contact preflight passed. Immediate verification and the writer's full readback
+passed; two subsequent fresh full-chip reads agreed exactly with the target.
+Only 0201h contains FEh; all other addresses, including 0001h, remain FFh.
+The programmer reported pin drivers reset after writing and reading.
+
+This specimen therefore did not exhibit the prior A9 mirror in this test.
+A single cleared bit does not qualify every address/data pattern, sustained
+programming, retention, or electrical margins. No second pulse or full-image
+burn was performed. The full chip marking is still unrecorded. The chip can
+be retained for further compatible programming experiments; restoring the
+cleared bit requires UV erasure.
+
+See [single-byte probe evidence](../evidence/20261120-rf2-a9/single-byte-probe.json).
+Raw logs and binary readbacks remain in the local session directory.

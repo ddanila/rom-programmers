@@ -1,0 +1,25 @@
+{
+  "session": "/Users/ddanila/fun/rom-programmers/sessions/rf2-single-byte-probe-20261120",
+  "specimen": "New blank RF2 inserted by user; complete marking not supplied",
+  "test": "FE at 0201; maximum one programming pulse",
+  "status": "verified",
+  "full_image_match": true,
+  "reads_agree": true,
+  "nonblank": [
+    {
+      "address": "0201",
+      "value": "FE"
+    }
+  ],
+  "shutdown": "reported-off",
+  "write_completed": true,
+  "image_sha256": "64778db1d72d9205f4ae74f225d25cedfacbdafb1164d0b2387ed28866a88c7a",
+  "program_log_sha256": "08daca142f840dac04c2075ac57922d45f730e2602abef8ee0ab14ad06181c95",
+  "readback_sha256": "64778db1d72d9205f4ae74f225d25cedfacbdafb1164d0b2387ed28866a88c7a",
+  "tool_identity": {
+    "rf2": {
+      "path": "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+      "sha256": "ddb8e506f9c6374b262b1f4efa87bf0c8a7c551eafaec8163b434dfb4d9bd730"
+    }
+  }
+}
