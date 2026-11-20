@@ -1,0 +1,18 @@
+--- tests/mock-t48.c
++++ tests/mock-t48.c
+@@ -12,12 +12,12 @@
+ static double ticks,pulse_start,vcc=5,vpp=25;
+ static int pulses;
+ static int z(int p){return(p<=12?p:p+16)-1;}
+-static unsigned addr(void){int a[]={8,7,6,5,4,3,2,1,23,22,19,21};unsigned v=0;for(int i=0;i<(h.device && h.device->code_memory_size==4096?12:11);i++)v|=pins[z(a[i])]<<i;return v;}
++static unsigned addr(void){int a[]={8,7,6,5,4,3,2,1,23,22,19,21};unsigned v=0;for(int i=0;i<(h.device && h.device->code_memory_size==4096?12:11);i++)v|=pins[z(a[i])]<<i;return getenv("MOCK_ALIAS_A9") ? v & ~512u : v;}
+ static unsigned data(void){int d[]={9,10,11,13,14,15,16,17};unsigned v=0;for(int i=0;i<8;i++)v|=pins[z(d[i])]<<i;return v;}
+ int clock_gettime(clockid_t id,struct timespec*t){(void)id;t->tv_sec=ticks;t->tv_nsec=(ticks-t->tv_sec)*1e9;return 0;}
+ int nanosleep(const struct timespec*t,struct timespec*r){(void)r;ticks+=t->tv_sec+t->tv_nsec/1e9;return 0;}
+-minipro_handle_t*minipro_open(uint8_t verbose){(void)verbose;memset(mem,255,sizeof mem);mem[0]=getenv("MOCK_INCOMPATIBLE")?0:0xc3;if(getenv("MOCK_2732"))for(int i=0;i<4096;i++)mem[i]=(i^(i>>8))&255;h.version=MP_T48;strcpy(h.serial_number,"6MNNWV7B0LLRDYCAA5PF5744");return &h;}
+-void minipro_close(minipro_handle_t*x){(void)x;for(int i=0;i<56;i++)assert(!pwr[i].vcc&&!pwr[i].vpp&&!pwr[i].gnd);free(h.device);h.device=NULL;fprintf(stderr,"MOCK pulses=%d cleanup=OK\n",pulses);}
++minipro_handle_t*minipro_open(uint8_t verbose){(void)verbose;memset(mem,255,sizeof mem);mem[0]=getenv("MOCK_INCOMPATIBLE")?0:0xff;if(getenv("MOCK_2732"))for(int i=0;i<4096;i++)mem[i]=(i^(i>>8))&255;h.version=MP_T48;strcpy(h.serial_number,"6MNNWV7B0LLRDYCAA5PF5744");return &h;}
++void minipro_close(minipro_handle_t*x){(void)x;for(int i=0;i<56;i++)assert(!pwr[i].vcc&&!pwr[i].vpp&&!pwr[i].gnd);if(getenv("MOCK_DUMP")){FILE*f=fopen(getenv("MOCK_DUMP"),"wb");for(unsigned a=0;a<2048;a++)fputc(mem[getenv("MOCK_ALIAS_A9")?a&~512u:a],f);fclose(f);}free(h.device);h.device=NULL;fprintf(stderr,"MOCK pulses=%d cleanup=OK\n",pulses);}
+ int minipro_reset_state(minipro_handle_t*x){(void)x;memset(pwr,0,sizeof pwr);memset(pins,0,sizeof pins);return 0;}
+ int minipro_set_zif_direction(minipro_handle_t*x,uint8_t*d){(void)x;memcpy(dirs,d,56);return 0;}
+ int minipro_set_zif_state(minipro_handle_t*x,uint8_t*s){(void)x;

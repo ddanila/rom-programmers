@@ -1,0 +1,97 @@
+{
+  "healthy": {
+    "exit_code": 0,
+    "sha256": "84998d3390e3ded5e9160bbc2cf17cb4f5f96bb168f44544b761817ceae6b0ff",
+    "last_lines": [
+      "ADC VPP=24.37 VCC=5.00 USB=5.00 VCCIO=3.30",
+      "074a old=ff want=00 got=00 host-pulse-window=50.000ms",
+      "Reset pin drivers: OK; changed=1734 remaining=0",
+      "MOCK pulses=1734 cleanup=OK"
+    ]
+  },
+  "alias-a9": {
+    "exit_code": 1,
+    "sha256": "12d373d8eda380d47d79db44e457815a11155a1acc07536ead72f2df3b366cf1",
+    "last_lines": [
+      "0201 old=ff want=cc got=0c host-pulse-window=50.000ms",
+      "ERROR: byte verification mismatch; no retry",
+      "Reset pin drivers: OK",
+      "MOCK pulses=507 cleanup=OK"
+    ],
+    "both_physical_dumps_exact_match": true
+  },
+  "first": {
+    "session": "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt-a25-3-program-20261120",
+    "program_log_sha256": "c0206282dc7aa586c254a317be08f2b7d245f0902f1434590f30a1b89522ec87",
+    "pulses_logged": 507,
+    "last_byte": [
+      "0201",
+      "ff",
+      "cc",
+      "0c",
+      "55.281"
+    ],
+    "programming_adc_ranges": {
+      "vpp": [
+        24.39,
+        24.89
+      ],
+      "vcc": [
+        4.88,
+        4.92
+      ],
+      "usb": [
+        4.81,
+        4.99
+      ],
+      "vccio": [
+        3.24,
+        3.25
+      ]
+    },
+    "reset_reported": true
+  },
+  "replacement": {
+    "session": "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt-a25-3-replacement-program-20261120",
+    "program_log_sha256": "835498945664590cfa39be2030da62a6df232e09070543361cf4067f9108e8df",
+    "pulses_logged": 507,
+    "last_byte": [
+      "0201",
+      "ff",
+      "cc",
+      "0c",
+      "55.330"
+    ],
+    "programming_adc_ranges": {
+      "vpp": [
+        24.24,
+        24.7
+      ],
+      "vcc": [
+        4.88,
+        4.92
+      ],
+      "usb": [
+        4.82,
+        4.85
+      ],
+      "vccio": [
+        3.24,
+        3.25
+      ]
+    },
+    "reset_reported": true
+  },
+  "glyph_controls": {
+    "2": {
+      "full_image_match": true,
+      "a9_unique_pairs_with_different_data": 229,
+      "sha256": "60f67cbaad970e788e9472498ff939d058b7e59c0180f56c835d3374e1b5503b"
+    },
+    "1": {
+      "full_image_match": true,
+      "a9_unique_pairs_with_different_data": 556,
+      "sha256": "7e10d896d0f85b6156ca82b32c63248154255831ba08090d3f8b9ae42903038b"
+    }
+  }
+}

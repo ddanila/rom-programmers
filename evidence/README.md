@@ -48,3 +48,13 @@ was performed; both reads reported reset. The exact underlying chip model
 remains unknown. Known firmware is kept locally, not added to dumps.
 
 [PC003 inventory record](https://github.com/ddanila/vintage-computer-inventory/tree/main/items/PC003-kaypro-2/evidence/20261111-2732-81-232-t48).
+
+## 2026-11-20 RF2 A9 recurrence
+
+Two T48 boot-ROM attempts produced identical A9-mirrored images, despite the
+explicit read-VPP workaround. The [investigation](../docs/rf2-a9-investigation.md)
+compares the earlier Willem records, the T48 diode report and the current driver.
+A host-only replay with an injected A9 alias reproduces both failed dumps exactly;
+[analysis](20261120-rf2-a9/analysis.json) records the hashes. Two separately
+programmed glyph chips remain successful full-readback controls. The electrical
+cause is unresolved; the T48 writer lacks the Willem first-pulse alias guard.
