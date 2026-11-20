@@ -1,0 +1,37 @@
+{
+  "session": "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt-a25-3-staged-20261120",
+  "specimen": "New blank RF2 inserted by user for A25.3; complete marking unrecorded",
+  "suggested_label": "A25.3vidtest",
+  "label_confirmed": false,
+  "first_byte": {
+    "address": "0201",
+    "value": "CC",
+    "status": "verified",
+    "nonblank": [
+      {
+        "address": "0201",
+        "value": "CC"
+      }
+    ]
+  },
+  "full_program": {
+    "status": "verified",
+    "write_completed": true,
+    "shutdown": "reported-off",
+    "comparison": "two matching fresh reads",
+    "result_sha256": "84998d3390e3ded5e9160bbc2cf17cb4f5f96bb168f44544b761817ceae6b0ff",
+    "pulses_logged": 1733,
+    "program_log_sha256": "24f07e4c3eeab9845586a9a90571c26d2a0c8774c89ba678ec0c0de74a8c4ad5"
+  },
+  "image": {
+    "path": "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt-a25-3-staged-20261120/boot.bin",
+    "sha256": "84998d3390e3ded5e9160bbc2cf17cb4f5f96bb168f44544b761817ceae6b0ff"
+  },
+  "tools": {
+    "rf2": {
+      "path": "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+      "sha256": "ddb8e506f9c6374b262b1f4efa87bf0c8a7c551eafaec8163b434dfb4d9bd730"
+    }
+  },
+  "physical_machine_boot_tested": false
+}

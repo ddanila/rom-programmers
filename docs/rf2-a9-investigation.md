@@ -172,3 +172,21 @@ cleared bit requires UV erasure.
 
 See [single-byte probe evidence](../evidence/20261120-rf2-a9/single-byte-probe.json).
 Raw logs and binary readbacks remain in the local session directory.
+
+## Follow-up: successful staged A25.3 boot-ROM burn
+
+The user inserted another blank RF2 and authorized a staged full boot-image
+burn. Two initial full reads were stable and all FF. A one-pulse probe wrote
+the actual boot-image byte CCh at 0201h; the writer and two fresh full reads
+confirmed that only that address changed. All other addresses remained FFh.
+
+The remaining boot image was then programmed successfully with 1733 additional
+pulses. The writer's full verification and two fresh independent reads matched
+SHA-256 `84998d3390e3ded5e9160bbc2cf17cb4f5f96bb168f44544b761817ceae6b0ff`
+exactly. Pin drivers were reported reset/off. No retries were needed.
+
+This specimen is verified for the cycle A25.3 boot image. The suggested label
+is `A25.3vidtest` (not yet confirmed applied by the user). This does not establish
+why the earlier specimens aliased, nor constitute a physical PC1715 boot test.
+See [staged-burn evidence](../evidence/20261120-rf2-a9/a25-3-staged-success.json);
+raw programming logs and readbacks remain in the local session directory.
