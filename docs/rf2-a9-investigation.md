@@ -215,3 +215,47 @@ removes the alias without further programming. Its original 0201=4F was
 a mirrored read of 0001; the workaround reads the actual upper cell as FF.
 See [second-specimen evidence](../evidence/20261121-a9-sticker-second/README.md).
 Full-image programming, retention and mainboard validation remain pending.
+
+## Why the previous workaround was incomplete
+
+The original explicit-pin implementation fixed native M2716 false-FF reads,
+including the read supply on pin 21. It retained normal digital A9 drive and
+the original VCC setting. Successful specimens were useful controls, but did
+not qualify the electrical margins of all RF2s. An all-FF blank image cannot
+prove address independence, and using the same faulty addressing path to write
+and verify can mask an alias. Distinct A9 partner data and switching read modes
+on unchanged contents exposed that gap. The original fix was valid for its
+observed failure, but was not a universal RF2 solution.
+
+## Automated regression coverage and remaining scope
+
+`tests/test_rf2_a9.py` runs with the normal unittest discovery command. It
+checks the preserved raw artifacts from both specimens and compiles the actual
+recorded `minimal-writer.c` against `tests/fixtures/rf2_a9_mock.c`. This executable
+has no USB transport and never accesses hardware. Pinned MiniPro headers/source
+must match `dependencies.lock.json`; CI explicitly fetches that revision and
+requires the C tests rather than silently skipping them.
+
+Coverage includes:
+
+- Recorded independent writes, full readback equality, unchanged partner cells,
+  artifact hashes, completion and reported shutdown on both specimens.
+- The recorded read-mode comparisons and the second chip's original false mirror.
+- Fault-injected A9 aliasing with the old driver, including the distinction
+  between a mirrored readback and actual modeled cell contents.
+- Independent writes in both A10 regions with the experimental workaround.
+- Removing either rail drive or the higher supply setting reintroduces the
+  modeled alias; removing either also failed in the recorded bench comparison.
+- Stale baselines, wrong test values, contact failure and out-of-range VPP abort
+  without a pulse; immediate verification failure stops without a retry.
+- Existing mock assertions check read pin-21 supply, rail routing conflicts,
+  A9 input direction, pulse duration and output cleanup.
+
+The model's illustrative supply threshold only separates the tested settings;
+it is not an analog simulation, a measured input threshold, or proof of the
+chip's internal failure mechanism. Regression tests protect the experimental
+behavior and evidence, not universal electrical compatibility.
+
+The experimental source and records are committed in `rom-programmers`; no
+production MiniPro fix has been merged or repinned. Full-image programming,
+retention and Robotron operation remain unqualified with this workaround.

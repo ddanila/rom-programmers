@@ -127,6 +127,20 @@ reads, missing shutdown evidence, tool identity, exclusive access, interrupted
 writes, upload caching, recovery without a second write, and artifact tampering.
 Backend simulations are not physical electrical tests.
 
+RF2 A9 regression tests also compile the recorded experimental C writer against
+a host-only fault model (no USB library or programmer access). For these tests,
+provide `cc` and the locked MiniPro checkout at `.tools/minipro`, or set
+`MINIPRO_TEST_SOURCE` to that checkout. Set `RF2_REQUIRE_MOCK=1` to fail rather
+than skip if prerequisites are missing; CI requires these tests on both Python
+versions. Recorded-data tests separately check both physical specimens, full
+readbacks, partner preservation and the voltage/routing comparison.
+
+The software-only A9 workaround is documented and bench-qualified on two
+specimens, but is **not integrated into the default pinned backend**. The tests
+exercise the preserved experimental source; they do not claim that the normal
+`t48-rf2` profile now fixes A9. See the
+[A9 investigation and coverage limits](docs/rf2-a9-investigation.md).
+
 See [qualification evidence](evidence/README.md) and [migration notes](docs/migration.md).
 The earlier successful RF2 burn and all historical acquisitions retain their
 original URLs. No firmware update or reprogramming is part of this migration.
