@@ -1,0 +1,165 @@
+{
+  "all_ff": false,
+  "artifacts": {
+    "before.bin": {
+      "sha256": "7bd4da0f247a1465fadd13d4c4ad7e4a4cee80819731a56caadfdc1413e809a1",
+      "size": 2048
+    },
+    "before.log": {
+      "sha256": "09f0839798ad9005c845aacaa1eba4de74a1bc224fc5728b64b06b431d5358e8",
+      "size": 105
+    },
+    "image.bin": {
+      "sha256": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca",
+      "size": 2048
+    },
+    "program.log": {
+      "sha256": "09d83999ddf539586188475004f48664c494da80c16409b2833d356c2d60063e",
+      "size": 168113
+    },
+    "read-1.bin": {
+      "sha256": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca",
+      "size": 2048
+    },
+    "read-1.log": {
+      "sha256": "20be05551c39e3fee24e899bbc9e1e6b7b48fb8a689061fa23cb3f6000e5362d",
+      "size": 105
+    },
+    "read-2.bin": {
+      "sha256": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca",
+      "size": 2048
+    },
+    "read-2.log": {
+      "sha256": "94a6a372cc474fefe0588e3deb62c025199f58fa668f9a4da2ecf359b3bab7dc",
+      "size": 105
+    },
+    "readback.bin": {
+      "sha256": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca",
+      "size": 2048
+    },
+    "writer-readback.bin": {
+      "sha256": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca",
+      "size": 2048
+    }
+  },
+  "comparison": "two matching fresh reads",
+  "experimental": true,
+  "finished_utc": "2026-11-21T10:07:54.020602+00:00",
+  "request": {
+    "action": "program",
+    "config": {
+      "program_vpp": 25,
+      "rf2": "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+      "serial": "6MNNWV7B0LLRDYCAA5PF5744",
+      "sha256": {
+        "rf2": "ddb8e506f9c6374b262b1f4efa87bf0c8a7c551eafaec8163b434dfb4d9bd730"
+      },
+      "source_revision": "0841ac8b658db74ec9c59070217a0c44fdaba629"
+    },
+    "image": {
+      "path": "/Users/ddanila/fun/ravi/firmware/robotron1715-crt/images/cycle/boot.bin",
+      "sha256": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca"
+    },
+    "profile": "t48-rf2",
+    "profile_definition": {
+      "backend": "t48",
+      "experimental": true,
+      "program": true,
+      "read_command": null,
+      "setup": "Standard DIP24 RF2 placement according to T48 device diagram. Read VCC/VPP 5 V; programming VPP 23.5\u201325.5 V. Native M2716 read/verify is excluded.",
+      "size": 2048,
+      "voltage": 25
+    },
+    "setup_confirmed": true,
+    "tools": {
+      "rf2": {
+        "path": "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "sha256": "ddb8e506f9c6374b262b1f4efa87bf0c8a7c551eafaec8163b434dfb4d9bd730"
+      }
+    },
+    "version": "0.1.0",
+    "workflow_sha256": "2dde40b6fe7b74baf5becdcc023db16ffc0110fa1e756ffbb786710725fdf5bc"
+  },
+  "result_sha256": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca",
+  "schema": 1,
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T10:04:50.301028+00:00",
+  "status": "verified",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt11-a25-3-20261121/full-program/before.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before.log",
+      "name": "before",
+      "outputs": {
+        "before.bin": "7bd4da0f247a1465fadd13d4c4ad7e4a4cee80819731a56caadfdc1413e809a1",
+        "before.log": "09f0839798ad9005c845aacaa1eba4de74a1bc224fc5728b64b06b431d5358e8"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "write",
+        "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt11-a25-3-20261121/full-program/image.bin",
+        "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt11-a25-3-20261121/full-program/writer-readback.bin",
+        "2048"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "program.log",
+      "name": "program",
+      "outputs": {
+        "program.log": "09d83999ddf539586188475004f48664c494da80c16409b2833d356c2d60063e",
+        "writer-readback.bin": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt11-a25-3-20261121/full-program/read-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1.log",
+      "name": "read-1",
+      "outputs": {
+        "read-1.bin": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca",
+        "read-1.log": "20be05551c39e3fee24e899bbc9e1e6b7b48fb8a689061fa23cb3f6000e5362d"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/pc1715-crt11-a25-3-20261121/full-program/read-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2.log",
+      "name": "read-2",
+      "outputs": {
+        "read-2.bin": "9c8eb6afbee0f77ac72e6926519e6408149b3859a17ba5566e54eb10cf6f1dca",
+        "read-2.log": "94a6a372cc474fefe0588e3deb62c025199f58fa668f9a4da2ecf359b3bab7dc"
+      },
+      "status": "complete"
+    }
+  ],
+  "write_completed": true
+}
