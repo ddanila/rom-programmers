@@ -1,0 +1,160 @@
+{
+  "artifacts": {
+    "after-1.bin": {
+      "sha256": "0dbd4a34c7c8923a47c29afb66b5e9a94ed9ea66ca1e8a5d7e984f6590ecfc05",
+      "size": 2048
+    },
+    "after-1.log": {
+      "sha256": "b8cb13525b7b0c0090c688579acebae0ebaef60da731bb3fe9cefee303d764ed",
+      "size": 105
+    },
+    "after-2.bin": {
+      "sha256": "0dbd4a34c7c8923a47c29afb66b5e9a94ed9ea66ca1e8a5d7e984f6590ecfc05",
+      "size": 2048
+    },
+    "after-2.log": {
+      "sha256": "0ab8305869a1d1a631a5c32bf6713bf4f2b737a894590b3f388c6c752e8b2aa6",
+      "size": 105
+    },
+    "before.bin": {
+      "sha256": "a065fbfd2f4ef3ec851622194104e0878c6775bbab5440fdfbc20b0810c3d345",
+      "size": 2048
+    },
+    "before.log": {
+      "sha256": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231",
+      "size": 105
+    },
+    "program.log": {
+      "sha256": "0a14e1a3cd6a2741c5423fb4622ba44540f055cfbed17bce9f9ab18bef96e695",
+      "size": 202
+    },
+    "target.bin": {
+      "sha256": "1ff418aefe8ee280f2136a5429118bed1ae7572122073fbfd1722f5d00978a6f",
+      "size": 2048
+    },
+    "writer-readback.bin": {
+      "sha256": "0dbd4a34c7c8923a47c29afb66b5e9a94ed9ea66ca1e8a5d7e984f6590ecfc05",
+      "size": 2048
+    }
+  },
+  "changes": [
+    {
+      "address": "0010",
+      "after": "FC",
+      "before": "FE"
+    },
+    {
+      "address": "0210",
+      "after": "FC",
+      "before": "FE"
+    }
+  ],
+  "finished_utc": "2026-11-21T17:04:07.743404+00:00",
+  "matches_target": false,
+  "readbacks_verified": true,
+  "request": {
+    "action": "one-pulse address-alias experiment",
+    "address": 528,
+    "config": {
+      "program_vpp": 25,
+      "rf2": "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+      "serial": "6MNNWV7B0LLRDYCAA5PF5744",
+      "sha256": {
+        "rf2": "ddb8e506f9c6374b262b1f4efa87bf0c8a7c551eafaec8163b434dfb4d9bd730"
+      },
+      "source_revision": "0841ac8b658db74ec9c59070217a0c44fdaba629"
+    },
+    "setup_confirmed": true,
+    "specimen": "first A9-sticker RF2",
+    "tools": {
+      "rf2": {
+        "path": "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "sha256": "ddb8e506f9c6374b262b1f4efa87bf0c8a7c551eafaec8163b434dfb4d9bd730"
+      }
+    },
+    "value": 252
+  },
+  "schema": 1,
+  "sha256": "0dbd4a34c7c8923a47c29afb66b5e9a94ed9ea66ca1e8a5d7e984f6590ecfc05",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:04:03.114772+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-first/02-high-a9-same-pair/before.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before.log",
+      "name": "before",
+      "outputs": {
+        "before.bin": "a065fbfd2f4ef3ec851622194104e0878c6775bbab5440fdfbc20b0810c3d345",
+        "before.log": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "write",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-first/02-high-a9-same-pair/target.bin",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-first/02-high-a9-same-pair/writer-readback.bin",
+        "1"
+      ],
+      "cwd": "None",
+      "exit_code": 3,
+      "log": "program.log",
+      "name": "program",
+      "outputs": {
+        "program.log": "0a14e1a3cd6a2741c5423fb4622ba44540f055cfbed17bce9f9ab18bef96e695",
+        "writer-readback.bin": "0dbd4a34c7c8923a47c29afb66b5e9a94ed9ea66ca1e8a5d7e984f6590ecfc05"
+      },
+      "status": "failed"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-first/02-high-a9-same-pair/after-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-1.log",
+      "name": "after-1",
+      "outputs": {
+        "after-1.bin": "0dbd4a34c7c8923a47c29afb66b5e9a94ed9ea66ca1e8a5d7e984f6590ecfc05",
+        "after-1.log": "b8cb13525b7b0c0090c688579acebae0ebaef60da731bb3fe9cefee303d764ed"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-first/02-high-a9-same-pair/after-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-2.log",
+      "name": "after-2",
+      "outputs": {
+        "after-2.bin": "0dbd4a34c7c8923a47c29afb66b5e9a94ed9ea66ca1e8a5d7e984f6590ecfc05",
+        "after-2.log": "0ab8305869a1d1a631a5c32bf6713bf4f2b737a894590b3f388c6c752e8b2aa6"
+      },
+      "status": "complete"
+    }
+  ],
+  "unexpected_addresses": [],
+  "write_completed": true
+}

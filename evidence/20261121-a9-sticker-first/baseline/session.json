@@ -1,0 +1,69 @@
+{
+  "artifacts": {
+    "read-1.bin": {
+      "sha256": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+      "size": 2048
+    },
+    "read-1.log": {
+      "sha256": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231",
+      "size": 105
+    },
+    "read-2.bin": {
+      "sha256": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+      "size": 2048
+    },
+    "read-2.log": {
+      "sha256": "0ab8305869a1d1a631a5c32bf6713bf4f2b737a894590b3f388c6c752e8b2aa6",
+      "size": 105
+    }
+  },
+  "finished_utc": "2026-11-21T17:03:17.508415+00:00",
+  "reads_match": true,
+  "request": {
+    "action": "read-only baseline",
+    "specimen": "first A9-sticker RF2"
+  },
+  "schema": 1,
+  "sha256": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:03:15.256601+00:00",
+  "status": "verified",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-first/baseline/read-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1.log",
+      "name": "read-1",
+      "outputs": {
+        "read-1.bin": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+        "read-1.log": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-first/baseline/read-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2.log",
+      "name": "read-2",
+      "outputs": {
+        "read-2.bin": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+        "read-2.log": "0ab8305869a1d1a631a5c32bf6713bf4f2b737a894590b3f388c6c752e8b2aa6"
+      },
+      "status": "complete"
+    }
+  ]
+}
