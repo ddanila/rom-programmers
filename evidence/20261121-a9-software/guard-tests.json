@@ -1,0 +1,12 @@
+[
+  {
+    "case": "baseline-mismatch",
+    "status": "passed",
+    "pulses": 0
+  },
+  {
+    "case": "wrong-test-value",
+    "status": "passed",
+    "pulses": 0
+  }
+]

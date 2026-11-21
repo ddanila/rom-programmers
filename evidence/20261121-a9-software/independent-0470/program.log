@@ -1,0 +1,5 @@
+Pin test passed.
+ADC VPP=11.06 VCC=5.08 USB=4.89 VCCIO=3.47
+ADC VPP=24.27 VCC=5.13 USB=4.81 VCCIO=3.47
+0470 old=ff want=fb got=fb host-pulse-window=51.766ms
+Reset pin drivers: OK; changed=1 remaining=0

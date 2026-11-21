@@ -1,0 +1,4 @@
+Pin test passed.
+ADC VPP=11.07 VCC=5.09 USB=4.89 VCCIO=3.47
+ERROR: initial read differs from preserved baseline; no pulse
+Reset pin drivers: OK

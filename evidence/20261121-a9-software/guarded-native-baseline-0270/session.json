@@ -1,0 +1,131 @@
+{
+  "artifacts": {
+    "after-1.bin": {
+      "sha256": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+      "size": 2048
+    },
+    "after-1.log": {
+      "sha256": "ac852536aee1069382fd43ae91aab7a5584539bbafb5e799e5b3abe7017e852b",
+      "size": 105
+    },
+    "after-2.bin": {
+      "sha256": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+      "size": 2048
+    },
+    "after-2.log": {
+      "sha256": "d60d60d74c2b8d6e26d5d105d3087def3ec03e38f6b38fe52aaab1a78679de98",
+      "size": 105
+    },
+    "program.log": {
+      "sha256": "51550fe89c0ec21772825cf5d88b4b9e74de0ec078589a52a5a65fefb7d5766a",
+      "size": 202
+    },
+    "standard-after.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "standard-after.log": {
+      "sha256": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231",
+      "size": 105
+    },
+    "target.bin": {
+      "sha256": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+      "size": 2048
+    },
+    "writer-readback.bin": {
+      "sha256": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+      "size": 2048
+    }
+  },
+  "combined_reads_match": true,
+  "finished_utc": "2026-11-21T17:18:11.720960+00:00",
+  "matches_target": true,
+  "request": {
+    "action": "one pulse using repeated combined-mode baseline",
+    "address": "0270",
+    "binary_sha256": "0e9caea3ff93694553da5155bedc67665e33f47590b360988a5639cdfcb7d82b",
+    "value": "FD"
+  },
+  "schema": 1,
+  "sha256": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:18:06.566149+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "write",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-native-baseline-0270/target.bin",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-native-baseline-0270/writer-readback.bin",
+        "1"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "program.log",
+      "name": "program",
+      "outputs": {
+        "program.log": "51550fe89c0ec21772825cf5d88b4b9e74de0ec078589a52a5a65fefb7d5766a",
+        "writer-readback.bin": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-native-baseline-0270/after-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-1.log",
+      "name": "after-1",
+      "outputs": {
+        "after-1.bin": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+        "after-1.log": "ac852536aee1069382fd43ae91aab7a5584539bbafb5e799e5b3abe7017e852b"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-native-baseline-0270/after-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-2.log",
+      "name": "after-2",
+      "outputs": {
+        "after-2.bin": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+        "after-2.log": "d60d60d74c2b8d6e26d5d105d3087def3ec03e38f6b38fe52aaab1a78679de98"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-native-baseline-0270/standard-after.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "standard-after.log",
+      "name": "standard-after",
+      "outputs": {
+        "standard-after.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "standard-after.log": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231"
+      },
+      "status": "complete"
+    }
+  ],
+  "write_completed": true
+}

@@ -1,0 +1,5 @@
+ADC VPP=25.00 VCC=5.00 USB=5.00 VCCIO=3.30
+ADC VPP=24.37 VCC=5.00 USB=5.00 VCCIO=3.30
+0250 old=ff want=fe got=fe host-pulse-window=50.000ms
+Reset pin drivers: OK; changed=1 remaining=0
+MOCK pulses=1 cleanup=OK

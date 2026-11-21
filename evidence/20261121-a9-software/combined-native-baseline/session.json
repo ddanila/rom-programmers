@@ -1,0 +1,95 @@
+{
+  "artifacts": {
+    "read-1.bin": {
+      "sha256": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+      "size": 2048
+    },
+    "read-1.log": {
+      "sha256": "88894b0ff360184681ef02e18920a9bc1b00ca7affbe2c7facc58ada18c88518",
+      "size": 105
+    },
+    "read-2.bin": {
+      "sha256": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+      "size": 2048
+    },
+    "read-2.log": {
+      "sha256": "ac852536aee1069382fd43ae91aab7a5584539bbafb5e799e5b3abe7017e852b",
+      "size": 105
+    },
+    "read-3.bin": {
+      "sha256": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+      "size": 2048
+    },
+    "read-3.log": {
+      "sha256": "f7c4da4cd1cd8ceb56e22bf7472314d5e8095b4e87e4b1a33058f6fa02b55167",
+      "size": 105
+    }
+  },
+  "finished_utc": "2026-11-21T17:17:46.831198+00:00",
+  "reads_match": true,
+  "request": {
+    "action": "read-only using exact combined writer read path",
+    "binary_sha256": "447797e11249913d6720519287eec5e3812ce0a3014495cacac9629fe63e5b46"
+  },
+  "schema": 1,
+  "sha256": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:17:43.386362+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-native-baseline/read-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1.log",
+      "name": "read-1",
+      "outputs": {
+        "read-1.bin": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+        "read-1.log": "88894b0ff360184681ef02e18920a9bc1b00ca7affbe2c7facc58ada18c88518"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-native-baseline/read-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2.log",
+      "name": "read-2",
+      "outputs": {
+        "read-2.bin": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+        "read-2.log": "ac852536aee1069382fd43ae91aab7a5584539bbafb5e799e5b3abe7017e852b"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-native-baseline/read-3.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-3.log",
+      "name": "read-3",
+      "outputs": {
+        "read-3.bin": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+        "read-3.log": "f7c4da4cd1cd8ceb56e22bf7472314d5e8095b4e87e4b1a33058f6fa02b55167"
+      },
+      "status": "complete"
+    }
+  ]
+}

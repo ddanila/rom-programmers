@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "read.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "read.log": {
+      "sha256": "84120fb983dc69690446537d38930408722d467b0689f8f8ad5ed8bc35e853ab",
+      "size": 281
+    }
+  },
+  "differences": [],
+  "finished_utc": "2026-11-21T17:15:40.210388+00:00",
+  "request": {
+    "action": "read-only all address/control rail routing",
+    "binary_sha256": "221300d0c07bb2bbcfcb0086e69e94099ffe2201c7113025d81ebbb1d07c9c2d",
+    "mode": 11,
+    "source_sha256": "fcd3f653b82aa8e8d3a72ce033bba359cfe1f0cacb488cc8d35bfcec669205d7"
+  },
+  "schema": 1,
+  "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:15:15.354129+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-all-rails",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-mode-11/read.bin",
+        "11"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read.log",
+      "name": "read",
+      "outputs": {
+        "read.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "read.log": "84120fb983dc69690446537d38930408722d467b0689f8f8ad5ed8bc35e853ab"
+      },
+      "status": "complete"
+    }
+  ]
+}

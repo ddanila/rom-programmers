@@ -1,0 +1,136 @@
+{
+  "artifacts": {
+    "read-1.bin": {
+      "sha256": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+      "size": 2048
+    },
+    "read-1.log": {
+      "sha256": "d3cc07ed71cc9405dfe47b654bacb080a05cfbd476ce875d8f03a8d3529251c2",
+      "size": 280
+    },
+    "read-2.bin": {
+      "sha256": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+      "size": 2048
+    },
+    "read-2.log": {
+      "sha256": "624604c065c63ecfe1aab5c8a4bd4b3c776926383e75346f9d2cf7eccead37c7",
+      "size": 280
+    }
+  },
+  "differences": [
+    [
+      [
+        "0210",
+        "FF",
+        "FC"
+      ],
+      [
+        "0230",
+        "FF",
+        "F9"
+      ],
+      [
+        "0270",
+        "FD",
+        "FE"
+      ],
+      [
+        "0310",
+        "FF",
+        "EF"
+      ],
+      [
+        "0610",
+        "FF",
+        "F7"
+      ],
+      [
+        "0670",
+        "F7",
+        "FB"
+      ]
+    ],
+    [
+      [
+        "0210",
+        "FF",
+        "FC"
+      ],
+      [
+        "0230",
+        "FF",
+        "F9"
+      ],
+      [
+        "0270",
+        "FD",
+        "FE"
+      ],
+      [
+        "0310",
+        "FF",
+        "EF"
+      ],
+      [
+        "0610",
+        "FF",
+        "F7"
+      ],
+      [
+        "0670",
+        "F7",
+        "FB"
+      ]
+    ]
+  ],
+  "finished_utc": "2026-11-21T17:19:38.898288+00:00",
+  "request": {
+    "action": "read-only ablation with distinguishing A9 pairs",
+    "binary_sha256": "b3b11f5853ac979830da45b2b73516ac1c99938e4394d13eb93c181531f25172",
+    "mode": 6,
+    "source_sha256": "fa6af2e9226388d690c19660bc72938caf75ab6d139c1dc8e1e1e0dedfa0be17"
+  },
+  "schema": 1,
+  "sha256": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:19:37.628034+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-ablation",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/ablation-6/read-1.bin",
+        "6"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1.log",
+      "name": "read-1",
+      "outputs": {
+        "read-1.bin": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+        "read-1.log": "d3cc07ed71cc9405dfe47b654bacb080a05cfbd476ce875d8f03a8d3529251c2"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-ablation",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/ablation-6/read-2.bin",
+        "6"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2.log",
+      "name": "read-2",
+      "outputs": {
+        "read-2.bin": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+        "read-2.log": "624604c065c63ecfe1aab5c8a4bd4b3c776926383e75346f9d2cf7eccead37c7"
+      },
+      "status": "complete"
+    }
+  ]
+}

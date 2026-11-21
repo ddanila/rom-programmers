@@ -1,0 +1,127 @@
+{
+  "artifacts": {
+    "after-1.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "after-1.log": {
+      "sha256": "4dfb971b9d1438e38c7a2c9221c652a863e4cffb6a3a3a7341edd73aca74e632",
+      "size": 105
+    },
+    "after-2.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "after-2.log": {
+      "sha256": "0ab8305869a1d1a631a5c32bf6713bf4f2b737a894590b3f388c6c752e8b2aa6",
+      "size": 105
+    },
+    "before.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "before.log": {
+      "sha256": "4dfb971b9d1438e38c7a2c9221c652a863e4cffb6a3a3a7341edd73aca74e632",
+      "size": 105
+    },
+    "program.log": {
+      "sha256": "0da82295f29253c69478cf1e7d20c3a2ef5d3b826c53c15e8923b95032260132",
+      "size": 144
+    },
+    "target.bin": {
+      "sha256": "1b8d6bbc734d1d80a17c9173ccf6b1133bb960364ea0c5f11d9b6fa24cb7d043",
+      "size": 2048
+    }
+  },
+  "finished_utc": "2026-11-21T17:16:43.903290+00:00",
+  "matches_target": false,
+  "request": {
+    "action": "address-restricted one pulse + full baseline check + repeat pre-read",
+    "address": "0270",
+    "binary_sha256": "0e9caea3ff93694553da5155bedc67665e33f47590b360988a5639cdfcb7d82b",
+    "source_sha256": "52372ab9d5a13389cf8a5f7c44bfdde87a6c73a6fe4a848408fe4368badc1cb9",
+    "value": "FD"
+  },
+  "schema": 1,
+  "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+  "shutdown": "reported-off",
+  "standard_reads_match": true,
+  "started_utc": "2026-11-21T17:16:39.658739+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-combined-0270/before.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before.log",
+      "name": "before",
+      "outputs": {
+        "before.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "before.log": "4dfb971b9d1438e38c7a2c9221c652a863e4cffb6a3a3a7341edd73aca74e632"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "write",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-combined-0270/target.bin",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-combined-0270/writer-readback.bin",
+        "1"
+      ],
+      "cwd": "None",
+      "exit_code": 1,
+      "log": "program.log",
+      "name": "program",
+      "outputs": {
+        "program.log": "0da82295f29253c69478cf1e7d20c3a2ef5d3b826c53c15e8923b95032260132"
+      },
+      "status": "failed"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-combined-0270/after-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-1.log",
+      "name": "after-1",
+      "outputs": {
+        "after-1.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "after-1.log": "4dfb971b9d1438e38c7a2c9221c652a863e4cffb6a3a3a7341edd73aca74e632"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/guarded-combined-0270/after-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-2.log",
+      "name": "after-2",
+      "outputs": {
+        "after-2.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "after-2.log": "0ab8305869a1d1a631a5c32bf6713bf4f2b737a894590b3f388c6c752e8b2aa6"
+      },
+      "status": "complete"
+    }
+  ],
+  "write_completed": false
+}

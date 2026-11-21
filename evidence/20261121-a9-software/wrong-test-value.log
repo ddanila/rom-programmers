@@ -1,0 +1,4 @@
+ADC VPP=25.00 VCC=5.18 USB=5.00 VCCIO=3.30
+ERROR: unexpected test byte; no pulse
+Reset pin drivers: OK
+MOCK pulses=0 cleanup=OK

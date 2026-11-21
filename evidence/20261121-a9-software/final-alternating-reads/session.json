@@ -1,0 +1,121 @@
+{
+  "artifacts": {
+    "read-0-mode-0.bin": {
+      "sha256": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+      "size": 2048
+    },
+    "read-0-mode-0.log": {
+      "sha256": "200f2aaaa577453a1da766a2939428441042eadd8efb67f7ff53856a4090000e",
+      "size": 280
+    },
+    "read-1-mode-14.bin": {
+      "sha256": "09174048b9b519e54c1fbd6c7db54f99e4dcf2c39831440bf0f624be9c18ece3",
+      "size": 2048
+    },
+    "read-1-mode-14.log": {
+      "sha256": "37088139da4585b26ff8f43755f37ee2fcd7eb1065bdd3c381830ee26cf7293a",
+      "size": 281
+    },
+    "read-2-mode-0.bin": {
+      "sha256": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+      "size": 2048
+    },
+    "read-2-mode-0.log": {
+      "sha256": "70b7f4ce4565eacf193deeb7839fb330c6758f5b7b3149e17c4d41699efe9788",
+      "size": 280
+    },
+    "read-3-mode-14.bin": {
+      "sha256": "09174048b9b519e54c1fbd6c7db54f99e4dcf2c39831440bf0f624be9c18ece3",
+      "size": 2048
+    },
+    "read-3-mode-14.log": {
+      "sha256": "37088139da4585b26ff8f43755f37ee2fcd7eb1065bdd3c381830ee26cf7293a",
+      "size": 281
+    }
+  },
+  "finished_utc": "2026-11-21T17:20:33.369384+00:00",
+  "request": {
+    "action": "alternate standard and minimal workaround reads with resets",
+    "binary_sha256": "b3b11f5853ac979830da45b2b73516ac1c99938e4394d13eb93c181531f25172"
+  },
+  "schema": 1,
+  "sha256": "09174048b9b519e54c1fbd6c7db54f99e4dcf2c39831440bf0f624be9c18ece3",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:20:30.865288+00:00",
+  "status": "verified",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-ablation",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/final-alternating-reads/read-0-mode-0.bin",
+        "0"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-0-mode-0.log",
+      "name": "read-0-mode-0",
+      "outputs": {
+        "read-0-mode-0.bin": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+        "read-0-mode-0.log": "200f2aaaa577453a1da766a2939428441042eadd8efb67f7ff53856a4090000e"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-ablation",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/final-alternating-reads/read-1-mode-14.bin",
+        "14"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1-mode-14.log",
+      "name": "read-1-mode-14",
+      "outputs": {
+        "read-1-mode-14.bin": "09174048b9b519e54c1fbd6c7db54f99e4dcf2c39831440bf0f624be9c18ece3",
+        "read-1-mode-14.log": "37088139da4585b26ff8f43755f37ee2fcd7eb1065bdd3c381830ee26cf7293a"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-ablation",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/final-alternating-reads/read-2-mode-0.bin",
+        "0"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2-mode-0.log",
+      "name": "read-2-mode-0",
+      "outputs": {
+        "read-2-mode-0.bin": "625faf33ec9a77c69279511049a792dd37ca5d88871edeccc19bf67394a87c95",
+        "read-2-mode-0.log": "70b7f4ce4565eacf193deeb7839fb330c6758f5b7b3149e17c4d41699efe9788"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-ablation",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/final-alternating-reads/read-3-mode-14.bin",
+        "14"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-3-mode-14.log",
+      "name": "read-3-mode-14",
+      "outputs": {
+        "read-3-mode-14.bin": "09174048b9b519e54c1fbd6c7db54f99e4dcf2c39831440bf0f624be9c18ece3",
+        "read-3-mode-14.log": "37088139da4585b26ff8f43755f37ee2fcd7eb1065bdd3c381830ee26cf7293a"
+      },
+      "status": "complete"
+    }
+  ],
+  "workaround_reads_match": true
+}

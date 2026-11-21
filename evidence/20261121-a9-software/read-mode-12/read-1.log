@@ -1,0 +1,7 @@
+Pin test passed.
+ADC VPP=11.06 VCC=5.08 USB=4.89 VCCIO=3.47
+Address=0050 A9-command=0 A9-digital-sense=0
+Address=0250 A9-command=1 A9-digital-sense=1
+Address=0450 A9-command=0 A9-digital-sense=0
+Address=0650 A9-command=1 A9-digital-sense=1
+Reset pin drivers: OK; read-only mode=12

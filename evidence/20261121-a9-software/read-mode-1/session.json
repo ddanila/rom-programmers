@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "read.bin": {
+      "sha256": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+      "size": 2048
+    },
+    "read.log": {
+      "sha256": "994c5cc148a4b18c13ff50656b16aea56861ff9b908db5e9f00695ba5f13ef00",
+      "size": 100
+    }
+  },
+  "differences": [],
+  "finished_utc": "2026-11-21T17:09:58.591711+00:00",
+  "request": {
+    "action": "read-only experiment",
+    "binary_sha256": "dba368b5ef28887ab93e0ac6507f80e3e9f47f7d1e371dccd8db03a1856f39d5",
+    "mode": 1,
+    "source_sha256": "860463e8a149f9e529ec3d441d37c54d2be146f8c38762c65cb2e2e9ea8d8a3a"
+  },
+  "schema": 1,
+  "sha256": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:09:57.924402+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-experiment",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-mode-1/read.bin",
+        "1"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read.log",
+      "name": "read",
+      "outputs": {
+        "read.bin": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+        "read.log": "994c5cc148a4b18c13ff50656b16aea56861ff9b908db5e9f00695ba5f13ef00"
+      },
+      "status": "complete"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "read-1.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "read-1.log": {
+      "sha256": "ee49cd3d53dd9df47d3f0727fe58043897e342b4b14b87fea66cff9336098e42",
+      "size": 100
+    },
+    "read-2.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "read-2.log": {
+      "sha256": "4f6602773cd28299acf58f0c9d127f2099e409665d8e86450dc77e01416c4f15",
+      "size": 100
+    }
+  },
+  "finished_utc": "2026-11-21T17:12:13.115438+00:00",
+  "reads_match": true,
+  "request": {
+    "action": "repeat rail-driven A9 reads after transient mismatch"
+  },
+  "schema": 1,
+  "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:12:11.667332+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-experiment-rails",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/rail-read-followup/read-1.bin",
+        "5"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1.log",
+      "name": "read-1",
+      "outputs": {
+        "read-1.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "read-1.log": "ee49cd3d53dd9df47d3f0727fe58043897e342b4b14b87fea66cff9336098e42"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-experiment-rails",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/rail-read-followup/read-2.bin",
+        "5"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2.log",
+      "name": "read-2",
+      "outputs": {
+        "read-2.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "read-2.log": "4f6602773cd28299acf58f0c9d127f2099e409665d8e86450dc77e01416c4f15"
+      },
+      "status": "complete"
+    }
+  ]
+}

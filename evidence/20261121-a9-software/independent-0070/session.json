@@ -1,0 +1,157 @@
+{
+  "artifacts": {
+    "after-1.bin": {
+      "sha256": "64105ed63a0ea8ec8520cff57cdb6a8a733543a1e5b5440719d34a991bf6b2f5",
+      "size": 2048
+    },
+    "after-1.log": {
+      "sha256": "ae92995ab86a4048df0e2b985ab1fda20b2dae627eea8f2090e447a5ec6be229",
+      "size": 105
+    },
+    "after-2.bin": {
+      "sha256": "64105ed63a0ea8ec8520cff57cdb6a8a733543a1e5b5440719d34a991bf6b2f5",
+      "size": 2048
+    },
+    "after-2.log": {
+      "sha256": "ac852536aee1069382fd43ae91aab7a5584539bbafb5e799e5b3abe7017e852b",
+      "size": 105
+    },
+    "before-1.bin": {
+      "sha256": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+      "size": 2048
+    },
+    "before-1.log": {
+      "sha256": "486530e2d6a73c055a80a4b7e7ce9f58a8bf0b36a98a7d74c3009de230654f26",
+      "size": 105
+    },
+    "before-2.bin": {
+      "sha256": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+      "size": 2048
+    },
+    "before-2.log": {
+      "sha256": "486530e2d6a73c055a80a4b7e7ce9f58a8bf0b36a98a7d74c3009de230654f26",
+      "size": 105
+    },
+    "program.log": {
+      "sha256": "72d6118cb461660d589850bdf38dd175afb6898a108a0512b863eddd80fdb964",
+      "size": 202
+    },
+    "target.bin": {
+      "sha256": "64105ed63a0ea8ec8520cff57cdb6a8a733543a1e5b5440719d34a991bf6b2f5",
+      "size": 2048
+    },
+    "writer-readback.bin": {
+      "sha256": "64105ed63a0ea8ec8520cff57cdb6a8a733543a1e5b5440719d34a991bf6b2f5",
+      "size": 2048
+    }
+  },
+  "combined_reads_match": true,
+  "finished_utc": "2026-11-21T17:18:45.423446+00:00",
+  "matches_target": true,
+  "request": {
+    "action": "one pulse explicit address, preserved combined-mode baseline",
+    "address": 112,
+    "binary_sha256": "ac35cbf27f67f7f07f51362f4e72404c1d23239081e5a58214ac635c0b75e292",
+    "value": 254
+  },
+  "schema": 1,
+  "sha256": "64105ed63a0ea8ec8520cff57cdb6a8a733543a1e5b5440719d34a991bf6b2f5",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:18:39.293717+00:00",
+  "status": "verified",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/independent-0070/before-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before-1.log",
+      "name": "before-1",
+      "outputs": {
+        "before-1.bin": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+        "before-1.log": "486530e2d6a73c055a80a4b7e7ce9f58a8bf0b36a98a7d74c3009de230654f26"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/independent-0070/before-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before-2.log",
+      "name": "before-2",
+      "outputs": {
+        "before-2.bin": "426bdf0048de17f9a2d975a2e59dd93b2595e57042ed9b698f350987bb7f2fbc",
+        "before-2.log": "486530e2d6a73c055a80a4b7e7ce9f58a8bf0b36a98a7d74c3009de230654f26"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/writer-0070",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "write",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/independent-0070/target.bin",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/independent-0070/writer-readback.bin",
+        "1"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "program.log",
+      "name": "program",
+      "outputs": {
+        "program.log": "72d6118cb461660d589850bdf38dd175afb6898a108a0512b863eddd80fdb964",
+        "writer-readback.bin": "64105ed63a0ea8ec8520cff57cdb6a8a733543a1e5b5440719d34a991bf6b2f5"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/independent-0070/after-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-1.log",
+      "name": "after-1",
+      "outputs": {
+        "after-1.bin": "64105ed63a0ea8ec8520cff57cdb6a8a733543a1e5b5440719d34a991bf6b2f5",
+        "after-1.log": "ae92995ab86a4048df0e2b985ab1fda20b2dae627eea8f2090e447a5ec6be229"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/independent-0070/after-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-2.log",
+      "name": "after-2",
+      "outputs": {
+        "after-2.bin": "64105ed63a0ea8ec8520cff57cdb6a8a733543a1e5b5440719d34a991bf6b2f5",
+        "after-2.log": "ac852536aee1069382fd43ae91aab7a5584539bbafb5e799e5b3abe7017e852b"
+      },
+      "status": "complete"
+    }
+  ],
+  "write_completed": true
+}

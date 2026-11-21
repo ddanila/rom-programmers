@@ -1,0 +1,116 @@
+{
+  "artifacts": {
+    "read-1.bin": {
+      "sha256": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+      "size": 2048
+    },
+    "read-1.log": {
+      "sha256": "b855164a6477f0703606e37efc1870ca39f346a7af4eceda75660a7fcd44279b",
+      "size": 281
+    },
+    "read-2.bin": {
+      "sha256": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+      "size": 2048
+    },
+    "read-2.log": {
+      "sha256": "b855164a6477f0703606e37efc1870ca39f346a7af4eceda75660a7fcd44279b",
+      "size": 281
+    }
+  },
+  "differences": [
+    [
+      [
+        "0210",
+        "FC",
+        "FF"
+      ],
+      [
+        "0230",
+        "F9",
+        "FF"
+      ],
+      [
+        "0310",
+        "EF",
+        "FF"
+      ],
+      [
+        "0610",
+        "F7",
+        "FF"
+      ]
+    ],
+    [
+      [
+        "0210",
+        "FC",
+        "FF"
+      ],
+      [
+        "0230",
+        "F9",
+        "FF"
+      ],
+      [
+        "0310",
+        "EF",
+        "FF"
+      ],
+      [
+        "0610",
+        "F7",
+        "FF"
+      ]
+    ]
+  ],
+  "finished_utc": "2026-11-21T17:17:09.067197+00:00",
+  "request": {
+    "action": "read-only combined supplies and A9 routing",
+    "binary_sha256": "d34b59eea11952ec4b903a4750a11ba698fe49b525bf4fe13acfc80994749a61",
+    "mode": 13,
+    "source_sha256": "1a316cd5bbe78f49b7f83684578ba8d6b40abcb85733f9a6a79c4dd94e381147"
+  },
+  "schema": 1,
+  "sha256": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:17:07.499209+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-combined",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-mode-13/read-1.bin",
+        "13"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1.log",
+      "name": "read-1",
+      "outputs": {
+        "read-1.bin": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+        "read-1.log": "b855164a6477f0703606e37efc1870ca39f346a7af4eceda75660a7fcd44279b"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-combined",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-mode-13/read-2.bin",
+        "13"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2.log",
+      "name": "read-2",
+      "outputs": {
+        "read-2.bin": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+        "read-2.log": "b855164a6477f0703606e37efc1870ca39f346a7af4eceda75660a7fcd44279b"
+      },
+      "status": "complete"
+    }
+  ]
+}

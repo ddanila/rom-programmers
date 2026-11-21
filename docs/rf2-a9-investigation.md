@@ -190,3 +190,17 @@ is `A25.3vidtest` (not yet confirmed applied by the user). This does not establi
 why the earlier specimens aliased, nor constitute a physical PC1715 boot test.
 See [staged-burn evidence](../evidence/20261120-rf2-a9/a25-3-staged-success.json);
 raw programming logs and readbacks remain in the local session directory.
+
+## Follow-up: software-only workaround on first A9-sticker specimen
+
+On 2026-11-21, direct T48 VCC/GND routing of A9 plus VCC request 5.18 V
+restored independent read/write addressing on the first marked specimen.
+Measured VCC was approximately 5.09 V reading and 5.14 V programming;
+normal VCCIO sufficed. Five individual writes preserved their A9 partners,
+including distinct pairs in both A10 regions. Switching back to the normal
+reader reintroduces mirroring without changing contents. Earlier mirrored
+readbacks therefore do not prove both physical cells were programmed.
+
+See [full experiment and source evidence](../evidence/20261121-a9-software/README.md).
+This is a specimen-qualified bench workaround; second-chip and full-image
+qualification remain pending. The production backend is unchanged.

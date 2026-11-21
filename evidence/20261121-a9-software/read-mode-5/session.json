@@ -1,0 +1,71 @@
+{
+  "artifacts": {
+    "read-1.bin": {
+      "sha256": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+      "size": 2048
+    },
+    "read-1.log": {
+      "sha256": "fbd5211229b21fbbc7c380b9fcb93a14506f4ff942b2cbfa9b447c0b3f44af82",
+      "size": 100
+    },
+    "read-2.bin": {
+      "sha256": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+      "size": 2048
+    },
+    "read-2.log": {
+      "sha256": "48f08fd79cd87b9d2c3aaae8e278a07e896f8fbad970b42171f35b64caf5489e",
+      "size": 100
+    }
+  },
+  "finished_utc": "2026-11-21T17:10:39.755816+00:00",
+  "reads_match": true,
+  "request": {
+    "action": "read-only A9 VCC/GND routing",
+    "binary_sha256": "7e5ffe8efb3172b131bfbe9cd75a4d70fb0878c1a37b47e975841264ee03bbb5",
+    "mode": 5,
+    "source_sha256": "9d2656968daceec8f9d8ffbfacb0da41b7350071e8f369cbcbb375be1d226836"
+  },
+  "schema": 1,
+  "sha256": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:10:38.159439+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-experiment-rails",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-mode-5/read-1.bin",
+        "5"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1.log",
+      "name": "read-1",
+      "outputs": {
+        "read-1.bin": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+        "read-1.log": "fbd5211229b21fbbc7c380b9fcb93a14506f4ff942b2cbfa9b447c0b3f44af82"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-experiment-rails",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-mode-5/read-2.bin",
+        "5"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2.log",
+      "name": "read-2",
+      "outputs": {
+        "read-2.bin": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+        "read-2.log": "48f08fd79cd87b9d2c3aaae8e278a07e896f8fbad970b42171f35b64caf5489e"
+      },
+      "status": "complete"
+    }
+  ]
+}

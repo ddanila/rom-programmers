@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "read.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "read.log": {
+      "sha256": "47340cd44093c0ae486f149d84cb95ac6ee3897f76304ab6bbcf042a79d1fc0f",
+      "size": 280
+    }
+  },
+  "finished_utc": "2026-11-21T17:12:42.825377+00:00",
+  "matches_standard": true,
+  "request": {
+    "action": "read-only digital A9 sense",
+    "binary_sha256": "666bca3fd466b9d75a824fc1ce9b0069bd6ae7caff70acb4cc922ba12778e357",
+    "mode": 0,
+    "source_sha256": "2152ebf3225b6152b5ace35afa14c4c59ab1a81f35c5b2393aded33f1fda95ab"
+  },
+  "schema": 1,
+  "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:12:41.882920+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-sense",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/sense-0/read.bin",
+        "0"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read.log",
+      "name": "read",
+      "outputs": {
+        "read.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "read.log": "47340cd44093c0ae486f149d84cb95ac6ee3897f76304ab6bbcf042a79d1fc0f"
+      },
+      "status": "complete"
+    }
+  ]
+}

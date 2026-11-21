@@ -1,0 +1,133 @@
+{
+  "artifacts": {
+    "after-1.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "after-1.log": {
+      "sha256": "b7ae306de9cd7ba5d35aac328a4dfbf77b0bab3d294d4e6e65e405940d5dd2ad",
+      "size": 105
+    },
+    "after-2.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "after-2.log": {
+      "sha256": "4dfb971b9d1438e38c7a2c9221c652a863e4cffb6a3a3a7341edd73aca74e632",
+      "size": 105
+    },
+    "before.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "before.log": {
+      "sha256": "4dfb971b9d1438e38c7a2c9221c652a863e4cffb6a3a3a7341edd73aca74e632",
+      "size": 105
+    },
+    "program.log": {
+      "sha256": "e4f9b14eb3c2ac5695d84a6fa04813a1b6d09d09c90b17f6a1de33f874441138",
+      "size": 202
+    },
+    "target.bin": {
+      "sha256": "1b8d6bbc734d1d80a17c9173ccf6b1133bb960364ea0c5f11d9b6fa24cb7d043",
+      "size": 2048
+    },
+    "writer-readback.bin": {
+      "sha256": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d",
+      "size": 2048
+    }
+  },
+  "finished_utc": "2026-11-21T17:15:59.175438+00:00",
+  "matches_target": false,
+  "request": {
+    "action": "one pulse A9 rails + VCC 5.18 setting + VCCIO 3.45 + 20ms address/VPP setup",
+    "address": "0270",
+    "binary_sha256": "447797e11249913d6720519287eec5e3812ce0a3014495cacac9629fe63e5b46",
+    "source_sha256": "a069b24bc6b592e59c1248dbb514b47f13ead8a90ef7198377051a089b397caa",
+    "value": "FD"
+  },
+  "schema": 1,
+  "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+  "shutdown": "reported-off",
+  "standard_reads_match": true,
+  "started_utc": "2026-11-21T17:15:54.274278+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-write-0270/before.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before.log",
+      "name": "before",
+      "outputs": {
+        "before.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "before.log": "4dfb971b9d1438e38c7a2c9221c652a863e4cffb6a3a3a7341edd73aca74e632"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "write",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-write-0270/target.bin",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-write-0270/writer-readback.bin",
+        "1"
+      ],
+      "cwd": "None",
+      "exit_code": 3,
+      "log": "program.log",
+      "name": "program",
+      "outputs": {
+        "program.log": "e4f9b14eb3c2ac5695d84a6fa04813a1b6d09d09c90b17f6a1de33f874441138",
+        "writer-readback.bin": "338ce243635150ba2b7e772189d2a28d91ec6e561e7cf179b400ce535617d39d"
+      },
+      "status": "failed"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-write-0270/after-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-1.log",
+      "name": "after-1",
+      "outputs": {
+        "after-1.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "after-1.log": "b7ae306de9cd7ba5d35aac328a4dfbf77b0bab3d294d4e6e65e405940d5dd2ad"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/combined-write-0270/after-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-2.log",
+      "name": "after-2",
+      "outputs": {
+        "after-2.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "after-2.log": "4dfb971b9d1438e38c7a2c9221c652a863e4cffb6a3a3a7341edd73aca74e632"
+      },
+      "status": "complete"
+    }
+  ],
+  "write_completed": true,
+  "writer_matches_standard": false
+}

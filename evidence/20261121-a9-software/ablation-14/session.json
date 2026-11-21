@@ -1,0 +1,74 @@
+{
+  "artifacts": {
+    "read-1.bin": {
+      "sha256": "b390f7ce90207bda1dc3a7f82d3a6a0b3d4f87691a2b399420caaa18f92dad45",
+      "size": 2048
+    },
+    "read-1.log": {
+      "sha256": "37088139da4585b26ff8f43755f37ee2fcd7eb1065bdd3c381830ee26cf7293a",
+      "size": 281
+    },
+    "read-2.bin": {
+      "sha256": "b390f7ce90207bda1dc3a7f82d3a6a0b3d4f87691a2b399420caaa18f92dad45",
+      "size": 2048
+    },
+    "read-2.log": {
+      "sha256": "76c3cad7ef6072198f2b2e05436cc01c3b36839a5cdee00695c813e47aa3739b",
+      "size": 281
+    }
+  },
+  "differences": [
+    [],
+    []
+  ],
+  "finished_utc": "2026-11-21T17:19:41.498182+00:00",
+  "request": {
+    "action": "read-only ablation with distinguishing A9 pairs",
+    "binary_sha256": "b3b11f5853ac979830da45b2b73516ac1c99938e4394d13eb93c181531f25172",
+    "mode": 14,
+    "source_sha256": "fa6af2e9226388d690c19660bc72938caf75ab6d139c1dc8e1e1e0dedfa0be17"
+  },
+  "schema": 1,
+  "sha256": "b390f7ce90207bda1dc3a7f82d3a6a0b3d4f87691a2b399420caaa18f92dad45",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:19:40.205660+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-ablation",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/ablation-14/read-1.bin",
+        "14"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-1.log",
+      "name": "read-1",
+      "outputs": {
+        "read-1.bin": "b390f7ce90207bda1dc3a7f82d3a6a0b3d4f87691a2b399420caaa18f92dad45",
+        "read-1.log": "37088139da4585b26ff8f43755f37ee2fcd7eb1065bdd3c381830ee26cf7293a"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/read-ablation",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/ablation-14/read-2.bin",
+        "14"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "read-2.log",
+      "name": "read-2",
+      "outputs": {
+        "read-2.bin": "b390f7ce90207bda1dc3a7f82d3a6a0b3d4f87691a2b399420caaa18f92dad45",
+        "read-2.log": "76c3cad7ef6072198f2b2e05436cc01c3b36839a5cdee00695c813e47aa3739b"
+      },
+      "status": "complete"
+    }
+  ]
+}

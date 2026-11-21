@@ -1,0 +1,140 @@
+{
+  "artifacts": {
+    "after-1.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "after-1.log": {
+      "sha256": "4126b48d924d56026c5d08b9026bade6192605598856c5dc6e712ce203486048",
+      "size": 105
+    },
+    "after-2.bin": {
+      "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+      "size": 2048
+    },
+    "after-2.log": {
+      "sha256": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231",
+      "size": 105
+    },
+    "before.bin": {
+      "sha256": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+      "size": 2048
+    },
+    "before.log": {
+      "sha256": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231",
+      "size": 105
+    },
+    "program.log": {
+      "sha256": "97ff6b6d27ecd704f16fcd2b8fa745d94ae66309e121b96a1413710c91660896",
+      "size": 202
+    },
+    "target.bin": {
+      "sha256": "9bc4570bbeee8935c003708c8682c1968cf4a76d18cd4aa07603efc082e61756",
+      "size": 2048
+    },
+    "writer-readback.bin": {
+      "sha256": "719aea162273f9cdae26fa08aa6e6485538690c88bf31d815f7ec7ea910d1ddc",
+      "size": 2048
+    }
+  },
+  "finished_utc": "2026-11-21T17:12:11.666225+00:00",
+  "matches_target": false,
+  "readbacks_verified": false,
+  "request": {
+    "action": "one pulse with A9 VCC/GND routing",
+    "address": "0250",
+    "binary_sha256": "4254eaa67b0dac0fb04185ab0740c838d9ff5cbf49ed49fe7fb41f76e1b51cb2",
+    "source_sha256": "0a2ceee70fbe00ed827b079ec88c3e94f6bbdfaa86a652b67fb8fa9c37ca9908",
+    "value": "FE"
+  },
+  "schema": 1,
+  "sha256": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+  "shutdown": "reported-off",
+  "standard_reads_match": true,
+  "started_utc": "2026-11-21T17:11:47.853909+00:00",
+  "status": "observed",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/rail-write-0250/before.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before.log",
+      "name": "before",
+      "outputs": {
+        "before.bin": "6a5006f1e83a5df40eb22159ae95f7baebb7fc3ea6f22b66faca8ad923ec9b26",
+        "before.log": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/rail-writer",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "write",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/rail-write-0250/target.bin",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/rail-write-0250/writer-readback.bin",
+        "1"
+      ],
+      "cwd": "None",
+      "exit_code": 3,
+      "log": "program.log",
+      "name": "program",
+      "outputs": {
+        "program.log": "97ff6b6d27ecd704f16fcd2b8fa745d94ae66309e121b96a1413710c91660896",
+        "writer-readback.bin": "719aea162273f9cdae26fa08aa6e6485538690c88bf31d815f7ec7ea910d1ddc"
+      },
+      "status": "failed"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/rail-write-0250/after-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-1.log",
+      "name": "after-1",
+      "outputs": {
+        "after-1.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "after-1.log": "4126b48d924d56026c5d08b9026bade6192605598856c5dc6e712ce203486048"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/rail-write-0250/after-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-2.log",
+      "name": "after-2",
+      "outputs": {
+        "after-2.bin": "567b308bd83a7e3399e5c1145b1234a8652296baa6efbd3e4afa3993be814fac",
+        "after-2.log": "4d9670f4d1bdb4cd1d0544c86a11e48b7897f582ef6c4e3d0eea048c5556d231"
+      },
+      "status": "complete"
+    }
+  ],
+  "write_completed": true,
+  "writer_readback_transient": [
+    {
+      "address": "03A0",
+      "standard": "FF",
+      "writer": "DF"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Pin test passed.
+ADC VPP=11.08 VCC=4.85 USB=4.89 VCCIO=3.25
+ADC VPP=24.23 VCC=4.90 USB=4.79 VCCIO=3.25
+0250 old=ff want=fe got=fe host-pulse-window=60.157ms
+Reset pin drivers: OK; changed=1 remaining=2
