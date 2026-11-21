@@ -97,7 +97,9 @@ class RF2ExecutableRegressionTests(unittest.TestCase):
         digital = cls.source[:start] + 'static void route_a9(unsigned a) {(void)a;}\n' + cls.source[end:]
         digital = digital.replace('dir[z(22)]=MP_PIN_DIRECTION_IN;', 'dir[z(22)]=MP_PIN_DIRECTION_OUT;')
         cls.digital = cls.compile('digital-a9', digital)
-        cls.legacy = cls.compile('legacy', (cls.mini/'tools/rf2-direct.c').read_text())
+        # Preserve the pre-fix implementation as a negative control when the lock advances.
+        cls.legacy = cls.compile('legacy', (ROOT/'tests/fixtures/rf2_before_a9.c').read_text())
+        cls.production = cls.compile('production', (cls.mini/'tools/rf2-direct.c').read_text())
 
     @classmethod
     def compile(cls, name, source, address=0x270, value=0xfd):
@@ -167,6 +169,26 @@ class RF2ExecutableRegressionTests(unittest.TestCase):
         self.assertEqual(result.returncode, 3, result.stderr)
         self.assertEqual((read[0x70], read[0x270]), (0xfd, 0xfd))
         self.assertEqual((physical[0x70], physical[0x270]), (0xfd, 0xff))
+        self.assertIn('MOCK pulses=1 cleanup=OK', result.stderr)
+
+    def test_pinned_backend_enables_workaround_for_rf2_only(self):
+        initial = blob(SECOND/'independent-0470/after-2.bin')
+        result, read, physical = self.invoke(self.production, initial)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(read, initial)
+        self.assertEqual(physical, initial)
+
+    def test_pinned_backend_first_pulse_handles_a9_fault_model(self):
+        initial = bytes([255])*2048
+        target = bytes(((a*73) ^ (a>>3) ^ ((a>>8)*37)) & 255 for a in range(2048))
+        # invoke() deliberately limits writes to one; verify the first-pulse guard
+        # leaves an exact partial image. Full-image coverage also runs in the fork.
+        result, read, physical = self.invoke(self.production, initial, target)
+        self.assertEqual(result.returncode, 3, result.stderr)
+        expected = bytearray(initial)
+        expected[0] = target[0]
+        self.assertEqual(read, expected)
+        self.assertEqual(physical, expected)
         self.assertIn('MOCK pulses=1 cleanup=OK', result.stderr)
 
     def test_guards_fail_without_pulses_and_reset_outputs(self):

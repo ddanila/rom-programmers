@@ -5,7 +5,7 @@
     "read_command": null,
     "program": true,
     "experimental": true,
-    "setup": "Standard DIP24 RF2 placement according to T48 device diagram. Read VCC/VPP 5 V; programming VPP 23.5\u201325.5 V. Native M2716 read/verify is excluded.",
+    "setup": "Standard DIP24 RF2 placement according to T48 device diagram. A9 uses VCC/GND rail routing; VCC requested 5.18 V (ADC must remain 4.75\u20135.25 V), read VPP=VCC; programming VPP 23.5\u201325.5 V. Native M2716 read/verify is excluded.",
     "voltage": 25
   },
   "willem-2732a-21v": {
@@ -47,7 +47,7 @@
   "t48-2716-read": {
     "backend": "t48",
     "size": 2048,
-    "read_command": null,
+    "read_command": "read2716",
     "program": false,
     "experimental": true,
     "setup": "Standard single-supply M2716 DIP24 placement per T48 diagram. Explicit pin-control read: VCC and read VPP at 5 V; no programming pulses. Does not apply to three-supply TMS2716.",

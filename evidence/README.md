@@ -58,3 +58,16 @@ A host-only replay with an injected A9 alias reproduces both failed dumps exactl
 [analysis](20261120-rf2-a9/analysis.json) records the hashes. Two separately
 programmed glyph chips remain successful full-readback controls. The electrical
 cause is unresolved; the T48 writer lacks the Willem first-pulse alias guard.
+
+
+## 2026-11-21 RF2 A9 software workaround and integration
+
+The [first marked specimen](20261121-a9-software/README.md) and
+[second marked specimen](20261121-a9-sticker-second/README.md) passed distinct
+A9-partner writes with rail-driven A9 and the higher in-range VCC setting.
+The normal reader reproduced mirroring on the same unchanged contents.
+
+The [integration record](20261121-rf2-integration/README.md) covers enabling this
+behavior by default for RF2 only, full-image host-model regressions and new
+first-pulse/A9-partner guards. The final live read check failed contact preflight;
+no positive hardware read or full-image burn is claimed for the integrated build.

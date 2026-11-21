@@ -1,0 +1,25 @@
+make: `minipro' is up to date.
+make: `rf2-direct' is up to date.
+./test-pulse-option
+Pulse short/long option and range: PASS
+gcc -g -fsanitize=address -Isrc tests/test-prom-buffers.c src/bitbang.c -ffunction-sections -Wl,-dead_strip -o test-prom-buffers
+./test-prom-buffers
+PROM 56-entry pin vectors: PASS
+python3 tests/test-rf2-generated.py ./rf2-mock
+full: PASS
+one: PASS
+incompatible: PASS
+verify-fail: PASS
+overvolt: PASS
+contact-fail: PASS
+2732 all 12 address bits, pin 21 routing, zero pulses: PASS
+python3 tests/test-rf2-a9.py ./rf2-mock
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.259s
+
+OK
+gcc -g -ffunction-sections -fdata-sections -Isrc tests/test-t48-cache.c -Wl,-dead_strip -o test-t48-cache
+./test-t48-cache
+T48 pull-down output restore: PASS
+Built tools. Bench configuration: /Users/ddanila/fun/rom-programmers/bench.json. Confirm physical settings before programming.

@@ -1,5 +1,9 @@
 # RF2 A9 failures and the diode workaround — 2026-11-20
 
+**Current status (2026-11-21):** the RF2-only A9 rail/supply workaround is now
+integrated and pinned, enabled by normal `t48-rf2` commands. See the integration
+section at the end; earlier sections preserve the chronological investigation.
+
 Two RF2 specimens selected for the plain-PC1715 CRT boot image failed at the
 same address with identical subsequent dumps. The new evidence establishes
 an A9 alias in the installed chip/programmer combination. It does **not**
@@ -256,6 +260,43 @@ it is not an analog simulation, a measured input threshold, or proof of the
 chip's internal failure mechanism. Regression tests protect the experimental
 behavior and evidence, not universal electrical compatibility.
 
-The experimental source and records are committed in `rom-programmers`; no
-production MiniPro fix has been merged or repinned. Full-image programming,
-retention and Robotron operation remain unqualified with this workaround.
+At the end of the experimental audit, the source and records were committed
+but the default backend had not yet changed. The integration below supersedes
+that deployment status. Full-image hardware programming, retention and Robotron
+operation remain unqualified with this workaround.
+
+## RF2 backend integration — 2026-11-21
+
+MiniPro fork main commit `3e89e0fac87c9da21ab912cce2787aa3eaee8d07` enables
+the workaround for its RF2 `read` and `write` commands. `rom-programmers` pins
+that revision, so normal `t48-rf2` operations use it without experimental tools
+or extra flags. The generic `t48-2716-read` profile now uses `read2716` with the
+previous 5 V digital addressing; `read2732` is unchanged.
+
+The RF2 writer requires matching initial full reads, compares the complete
+tracked partial image after the first pulse, and checks the A9 partner after
+each subsequent pulse. Failed verification stops without retry and saves a
+full readback after resetting outputs. A maximum-byte limit still permits
+controlled partial programming; it does not bypass these checks.
+
+Backend regression tests execute this actual source, including a nonperiodic
+full image under the A9 margin model, initial instability, aliases on A0/A8/
+A9/A10, and corruption introduced on the second pulse. Existing 2732, contact,
+voltage, retry, pulse-option, cache and buffer tests also pass. The shared suite
+has 36 passing tests and checks RF2 versus generic-2716 command selection,
+current pinned-backend behavior and T48-only bootstrap configuration handling.
+
+`tools/bootstrap.py --build --backend t48` rebuilds just this backend and its
+checks, without requiring the unrelated DOS compiler. Local default bench.json
+was generated with the actual T48 serial, pinned revision and executable hash.
+The prior custom bench-pc003-read.json was preserved; its old executable hash
+must not be reused with the updated binary. The old binary/config are archived
+locally under .tools/rf2-legacy-0841ac8.
+
+A read-only check through the integrated normal RF2 profile was attempted.
+Contact preflight failed on every non-ground pin, consistent with an empty or
+disconnected socket. The backend reported a successful reset and did not reach
+normal chip power/read or programming. The session keeps its failed/unknown
+shutdown state; the reset report is retained in the raw log. This is a negative
+contact-check result, not positive hardware qualification of the rebuilt tool.
+See [integration record](../evidence/20261121-rf2-integration/README.md).

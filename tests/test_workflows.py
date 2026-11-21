@@ -99,6 +99,8 @@ class WorkflowTests(unittest.TestCase):
         self.assertTrue(r['write_completed'])
         self.assertEqual([s['name'] for s in r['steps']],['before','program','read-1','read-2'])
         self.assertEqual(r['shutdown'],'reported-off')
+        calls=[json.loads(line) for line in (self.root/'calls.log').read_text().splitlines()]
+        self.assertEqual([call[2] for call in calls], ['read', 'write', 'read', 'read'])
 
     def test_size_checked_before_hardware(self):
         self.image.write_bytes(b'wrong')
@@ -143,6 +145,8 @@ class WorkflowTests(unittest.TestCase):
         self.assertFalse((self.root/'calls.log').exists())
         self.assertEqual(self.call('read','t48-2716-read'),0)
         self.assertEqual(self.record()['request']['profile'],'t48-2716-read')
+        calls=[json.loads(line) for line in (self.root/'calls.log').read_text().splitlines()]
+        self.assertTrue(all(call[2]=='read2716' for call in calls))
 
     def test_t48_2732_read_is_4k_and_never_programs(self):
         self.prepare(4096)

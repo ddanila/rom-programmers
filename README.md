@@ -6,7 +6,7 @@ owns profiles, orchestration, reproducible setup, and session evidence.
 
 | Project | Responsibility |
 | --- | --- |
-| [ddanila/minipro, bench branch](https://github.com/ddanila/minipro/tree/bench) | T48 driver fixes, contact checking, experimental RF2 tool |
+| [ddanila/minipro, main branch](https://github.com/ddanila/minipro/tree/main) | T48 driver fixes, contact checking, experimental RF2 tool |
 | [ddanila/willem-v30](https://github.com/ddanila/willem-v30) | DOS reader/writer, LPT signals, timing and emulation |
 | [ddanila/dosravi](https://github.com/ddanila/dosravi) | DOS transport, upload caching and execution recovery |
 | [ddanila/dumps](https://github.com/ddanila/dumps) | Preserved firmware acquisitions |
@@ -28,6 +28,13 @@ Sources are fetched at the exact revisions in `dependencies.lock.json` into
 ignored `.tools/` directories. `bench.json` contains local paths, device
 identity and generated executable hashes; it is not committed. If it already
 exists, bootstrap writes `.tools/bench.generated.json` for review instead.
+For T48 alone, use `--backend t48`; this skips Willem/DOSRAVI sources and
+build dependencies. For example:
+
+```sh
+python3 tools/bootstrap.py --build --backend t48 --t48-serial YOUR_T48_SERIAL
+```
+
 Optional `MINIPRO_LIBUSB_INCLUDE` supports locally extracted libusb headers.
 Source-tree execution needs no installation of this package. For an installed
 command use `python3 -m pip install .` in your environment.
@@ -65,7 +72,9 @@ must exactly match the profile; padding and repetition are never implicit.
 Supported profiles:
 
 - `t48-rf2`: experimental 2 KiB RF2 read/program via explicit pin control.
-  Contact preflight, matching serial, per-byte verify and final fresh reads.
+  A9 rail routing and a 5.18 V VCC request are enabled automatically for RF2.
+  Contact preflight, matching serial, two initial reads, first-pulse full-chip
+  verification, per-pulse A9 partner checks and final fresh reads.
   The known-bad native M2716 read/verify path is never selected.
 - `t48-2716-read`: read-only standard single-supply M2716, using the same
   explicit 5 V pin-control read path. No programming capability; excludes
@@ -135,10 +144,17 @@ than skip if prerequisites are missing; CI requires these tests on both Python
 versions. Recorded-data tests separately check both physical specimens, full
 readbacks, partner preservation and the voltage/routing comparison.
 
-The software-only A9 workaround is documented and bench-qualified on two
-specimens, but is **not integrated into the default pinned backend**. The tests
-exercise the preserved experimental source; they do not claim that the normal
-`t48-rf2` profile now fixes A9. See the
+The software-only A9 workaround is **enabled by default for `t48-rf2`** in the
+pinned MiniPro backend. Standard 2716 reads use the separate `read2716` command;
+2732 reads retain `read2732`. Neither gets the RF2 drive/supply changes. Shared
+tests exercise both preserved experimental code and the current pinned backend;
+the MiniPro fork tests full-image writes and injected alias faults. The old
+negative-control fixture is an exact snapshot of `tools/rf2-direct.c` at
+`0841ac8b658db74ec9c59070217a0c44fdaba629`.
+
+Independent-byte writes were physically qualified on two specimens with the
+experimental implementation. Full-image hardware programming, retention and
+mainboard operation remain pending for the integrated implementation. See the
 [A9 investigation and coverage limits](docs/rf2-a9-investigation.md).
 
 See [qualification evidence](evidence/README.md) and [migration notes](docs/migration.md).

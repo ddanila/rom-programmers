@@ -19,13 +19,19 @@ def output(*args, cwd=None):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--build', action='store_true')
+    parser.add_argument('--backend', choices=('all', 't48', 'willem'), default='all',
+                        help='Fetch/build only the selected backend (default: both)')
     parser.add_argument('--t48-serial')
     parser.add_argument('--dos-port')
     args = parser.parse_args()
     lock = json.loads((ROOT / 'dependencies.lock.json').read_text())
+    selected = lock if args.backend == 'all' else {
+        name: dep for name, dep in lock.items()
+        if name in (('minipro',) if args.backend == 't48' else ('willem', 'dosravi'))
+    }
     dest = ROOT / '.tools'
     dest.mkdir(exist_ok=True)
-    for name, dep in lock.items():
+    for name, dep in selected.items():
         path = dest / name
         if not path.exists():
             run('git', 'init', path)
@@ -39,40 +45,47 @@ def main():
             run('git', 'fetch', '--depth=1', 'origin', dep['revision'], cwd=path)
             run('git', 'checkout', '--detach', dep['revision'], cwd=path)
     # DOSRAVI imports the pinned RAVI submodule directly even when installed.
-    run('git', 'submodule', 'update', '--init', '--depth=1', 'third_party/ravi', cwd=dest / 'dosravi')
-    for name, dep in lock.items():
+    if 'dosravi' in selected:
+        run('git', 'submodule', 'update', '--init', '--depth=1', 'third_party/ravi', cwd=dest / 'dosravi')
+    for name, dep in selected.items():
         for relative, expected in dep.get('submodules', {}).items():
             if output('git', 'rev-parse', 'HEAD', cwd=dest / name / relative) != expected:
                 raise RuntimeError(f'{name}/{relative}: unexpected submodule revision')
     if not args.build:
         return
-    mini = dest / 'minipro'
-    make_options = [f'SHARE_INSTDIR={mini}']
-    # Optional locally extracted development headers; no sudo/system changes.
-    if os.environ.get('MINIPRO_LIBUSB_INCLUDE'):
-        make_options += ['libusb_CFLAGS=-I' + os.environ['MINIPRO_LIBUSB_INCLUDE'],
-                         'libusb_LIBS=-l:libusb-1.0.so.0']
-    run('make', '-j2', 'minipro', 'rf2-direct', 'test-bench', *make_options, cwd=mini)
-    run('make', '-j2', 'dos', 'build/dos/PG2732A.COM', cwd=dest / 'willem')
-    venv = dest / 'venv'
-    if not (venv / 'bin/python').exists():
-        run(sys.executable, '-m', 'venv', venv)
-    run(venv / 'bin/python', '-m', 'pip', 'install', '-e', dest / 'dosravi')
     def sha(path):
         return hashlib.sha256(path.read_bytes()).hexdigest()
-    config = {
-        't48': {'serial': args.t48_serial or 'SET_T48_SERIAL', 'rf2': str(mini / 'rf2-direct'),
-                'program_vpp': 25, 'source_revision': lock['minipro']['revision'],
-                'sha256': {'rf2': sha(mini / 'rf2-direct')}},
-        'willem': {'port': args.dos_port or '/dev/serial/by-id/SET_ADAPTER', 'baud': 57600, 'lpt': '378',
-                   'program_vpp': 21, 'exec_timeout': 1800,
-                   'dosravi': [str(venv / 'bin/python'), '-m', 'dosravi.cli'],
-                   'cwd': str(dest / 'dosravi'),
-                   'reader': str(dest / 'willem/build/dos/WILLEM.COM'),
-                   'writer': str(dest / 'willem/build/dos/PG2732A.COM'),
-                   'source_revisions': {k: v['revision'] for k, v in lock.items() if k != 'minipro'},
-                   'sha256': {'reader': sha(dest / 'willem/build/dos/WILLEM.COM'),
-                              'writer': sha(dest / 'willem/build/dos/PG2732A.COM')}}}
+    config = {}
+    if 'minipro' in selected:
+        mini = dest / 'minipro'
+        make_options = [f'SHARE_INSTDIR={mini}']
+        # Optional locally extracted development headers; no sudo/system changes.
+        if os.environ.get('MINIPRO_LIBUSB_INCLUDE'):
+            make_options += ['libusb_CFLAGS=-I' + os.environ['MINIPRO_LIBUSB_INCLUDE'],
+                             'libusb_LIBS=-l:libusb-1.0.so.0']
+        run('make', '-j2', 'minipro', 'rf2-direct', 'test-bench', *make_options, cwd=mini)
+        config['t48'] = {
+            'serial': args.t48_serial or 'SET_T48_SERIAL', 'rf2': str(mini / 'rf2-direct'),
+            'program_vpp': 25, 'source_revision': lock['minipro']['revision'],
+            'sha256': {'rf2': sha(mini / 'rf2-direct')},
+        }
+    if 'willem' in selected:
+        run('make', '-j2', 'dos', 'build/dos/PG2732A.COM', cwd=dest / 'willem')
+        venv = dest / 'venv'
+        if not (venv / 'bin/python').exists():
+            run(sys.executable, '-m', 'venv', venv)
+        run(venv / 'bin/python', '-m', 'pip', 'install', '-e', dest / 'dosravi')
+        config['willem'] = {
+            'port': args.dos_port or '/dev/serial/by-id/SET_ADAPTER',
+            'baud': 57600, 'lpt': '378', 'program_vpp': 21, 'exec_timeout': 1800,
+            'dosravi': [str(venv / 'bin/python'), '-m', 'dosravi.cli'],
+            'cwd': str(dest / 'dosravi'),
+            'reader': str(dest / 'willem/build/dos/WILLEM.COM'),
+            'writer': str(dest / 'willem/build/dos/PG2732A.COM'),
+            'source_revisions': {k: v['revision'] for k, v in lock.items() if k != 'minipro'},
+            'sha256': {'reader': sha(dest / 'willem/build/dos/WILLEM.COM'),
+                       'writer': sha(dest / 'willem/build/dos/PG2732A.COM')},
+        }
     path = ROOT / 'bench.json'
     if path.exists():
         path = ROOT / '.tools/bench.generated.json'
