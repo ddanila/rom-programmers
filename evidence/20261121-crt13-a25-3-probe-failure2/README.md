@@ -23,3 +23,7 @@ Readback SHA256: 325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f50074611
 Inspection status verified means matching repeated reads, not successful
 programming; matches_probe=false records the mismatch. Original failed-write
 state and raw log are preserved. Binary readbacks remain in local sessions.
+
+User disposition: preserve this specimen without UV erasure for future
+diagnostics. Both failed specimens are being retained with their current
+contents (4Fh at 0001h and 0201h; all other bytes FFh).

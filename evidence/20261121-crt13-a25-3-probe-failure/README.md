@@ -22,3 +22,7 @@ matches_probe=false explicitly records that programming did not verify.
 The failed write session retains its original state; writer shutdown is
 established by the raw log and later reads report shutdown=reported-off.
 Raw binary readbacks remain in the local sessions referenced by manifests.
+
+User disposition: preserve this specimen without UV erasure for future
+diagnostics. Both failed specimens are being retained with their current
+contents (4Fh at 0001h and 0201h; all other bytes FFh).
