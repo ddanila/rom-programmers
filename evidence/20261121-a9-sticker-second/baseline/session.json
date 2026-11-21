@@ -1,0 +1,121 @@
+{
+  "artifacts": {
+    "normal-1.bin": {
+      "sha256": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+      "size": 2048
+    },
+    "normal-1.log": {
+      "sha256": "35d13ba24647c3c6d386ed42d5225949176b1f6b4400453081dafec53dc1a9a0",
+      "size": 105
+    },
+    "normal-2.bin": {
+      "sha256": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+      "size": 2048
+    },
+    "normal-2.log": {
+      "sha256": "d38aa5890b42c46f6d4fe0488aec2490d4c9f2191dcd57ed989d7f382b9a3edd",
+      "size": 105
+    },
+    "workaround-1.bin": {
+      "sha256": "4fce06e5f72b6393b83997c8c8135d647eeacc22acbdb82d4be2046d7ac75651",
+      "size": 2048
+    },
+    "workaround-1.log": {
+      "sha256": "731a6de04e2e2200e7e1f9c69332e487384e709894ec0e240f4d51fa425d42c7",
+      "size": 105
+    },
+    "workaround-2.bin": {
+      "sha256": "4fce06e5f72b6393b83997c8c8135d647eeacc22acbdb82d4be2046d7ac75651",
+      "size": 2048
+    },
+    "workaround-2.log": {
+      "sha256": "2f19f5b71fc0b140a3afc38f54effbbdb5fcfa007036b37d34355b4d5d0a6520",
+      "size": 105
+    }
+  },
+  "finished_utc": "2026-11-21T17:59:48.443658+00:00",
+  "repeated_reads_match": true,
+  "request": {
+    "action": "second A9-sticker RF2 baseline normal and minimal workaround",
+    "workaround_sha256": "6c19d8d5e3562064fdd3859afd0ffe532cf84111447fb075e0fedea323f94684"
+  },
+  "schema": 1,
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T17:59:43.886227+00:00",
+  "status": "verified",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/baseline/normal-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "normal-1.log",
+      "name": "normal-1",
+      "outputs": {
+        "normal-1.bin": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+        "normal-1.log": "35d13ba24647c3c6d386ed42d5225949176b1f6b4400453081dafec53dc1a9a0"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/.tools/minipro/rf2-direct",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/baseline/normal-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "normal-2.log",
+      "name": "normal-2",
+      "outputs": {
+        "normal-2.bin": "325a208eccc3bf862ec5ac3a0d740534ab245e358b68ce0625a485f500746118",
+        "normal-2.log": "d38aa5890b42c46f6d4fe0488aec2490d4c9f2191dcd57ed989d7f382b9a3edd"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/writer-0290",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/baseline/workaround-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "workaround-1.log",
+      "name": "workaround-1",
+      "outputs": {
+        "workaround-1.bin": "4fce06e5f72b6393b83997c8c8135d647eeacc22acbdb82d4be2046d7ac75651",
+        "workaround-1.log": "731a6de04e2e2200e7e1f9c69332e487384e709894ec0e240f4d51fa425d42c7"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-software/writer-0290",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/baseline/workaround-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "workaround-2.log",
+      "name": "workaround-2",
+      "outputs": {
+        "workaround-2.bin": "4fce06e5f72b6393b83997c8c8135d647eeacc22acbdb82d4be2046d7ac75651",
+        "workaround-2.log": "2f19f5b71fc0b140a3afc38f54effbbdb5fcfa007036b37d34355b4d5d0a6520"
+      },
+      "status": "complete"
+    }
+  ],
+  "workaround_sha256": "4fce06e5f72b6393b83997c8c8135d647eeacc22acbdb82d4be2046d7ac75651"
+}

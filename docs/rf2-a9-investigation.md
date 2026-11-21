@@ -204,3 +204,14 @@ readbacks therefore do not prove both physical cells were programmed.
 See [full experiment and source evidence](../evidence/20261121-a9-software/README.md).
 This is a specimen-qualified bench workaround; second-chip and full-image
 qualification remain pending. The production backend is unchanged.
+
+## Follow-up: second A9-sticker specimen confirmed
+
+The second marked chip passed the same minimal software workaround on
+2026-11-21. Four independent writes produced 0070=FE, 0270=FD, 0470=FB and
+0670=F7, preserving every other byte. Each pulse passed full writer verify
+and two fresh reads. Alternating normal/workaround reads reproduces and
+removes the alias without further programming. Its original 0201=4F was
+a mirrored read of 0001; the workaround reads the actual upper cell as FF.
+See [second-specimen evidence](../evidence/20261121-a9-sticker-second/README.md).
+Full-image programming, retention and mainboard validation remain pending.

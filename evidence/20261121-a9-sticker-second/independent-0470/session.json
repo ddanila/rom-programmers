@@ -1,0 +1,159 @@
+{
+  "artifacts": {
+    "after-1.bin": {
+      "sha256": "e418d133fff0a3b656b45ffdcb225be9804732549fdcd44fde3e786ecfaf1a37",
+      "size": 2048
+    },
+    "after-1.log": {
+      "sha256": "3641331585d98df015ea0cf285b55ac650f9a58861f4fdb203b99c0f6c206a59",
+      "size": 105
+    },
+    "after-2.bin": {
+      "sha256": "e418d133fff0a3b656b45ffdcb225be9804732549fdcd44fde3e786ecfaf1a37",
+      "size": 2048
+    },
+    "after-2.log": {
+      "sha256": "ee144b7d3ccffff933170492f7f5f98d1e225a9edbf9e026ebf344b9dce6a53e",
+      "size": 105
+    },
+    "before-1.bin": {
+      "sha256": "4d7c8d6ee5e0d64b0ab7193fb420a9a12d431918a2aba44da8c18967ad748af0",
+      "size": 2048
+    },
+    "before-1.log": {
+      "sha256": "731a6de04e2e2200e7e1f9c69332e487384e709894ec0e240f4d51fa425d42c7",
+      "size": 105
+    },
+    "before-2.bin": {
+      "sha256": "4d7c8d6ee5e0d64b0ab7193fb420a9a12d431918a2aba44da8c18967ad748af0",
+      "size": 2048
+    },
+    "before-2.log": {
+      "sha256": "ee144b7d3ccffff933170492f7f5f98d1e225a9edbf9e026ebf344b9dce6a53e",
+      "size": 105
+    },
+    "program.log": {
+      "sha256": "6e89b082446a98cd549c5f0b1b2e0a093422415008713c5181168fd666fa6ff5",
+      "size": 202
+    },
+    "target.bin": {
+      "sha256": "e418d133fff0a3b656b45ffdcb225be9804732549fdcd44fde3e786ecfaf1a37",
+      "size": 2048
+    },
+    "writer-readback.bin": {
+      "sha256": "e418d133fff0a3b656b45ffdcb225be9804732549fdcd44fde3e786ecfaf1a37",
+      "size": 2048
+    }
+  },
+  "combined_reads_match": true,
+  "finished_utc": "2026-11-21T18:00:39.422889+00:00",
+  "matches_target": true,
+  "request": {
+    "action": "one pulse explicit address, preserved combined-mode baseline",
+    "address": 1136,
+    "binary_sha256": "a7979619fe9e978c12639113ee77a0614ae665961ef07bdadbbf8e9a71b6ceb6",
+    "source_sha256": "a5a13c1b10feccee53dae305584c7db5e371bba6e4eeab6fc7458a53f2f661cf",
+    "specimen": "second A9-sticker RF2",
+    "value": 251
+  },
+  "schema": 1,
+  "sha256": "e418d133fff0a3b656b45ffdcb225be9804732549fdcd44fde3e786ecfaf1a37",
+  "shutdown": "reported-off",
+  "started_utc": "2026-11-21T18:00:32.858441+00:00",
+  "status": "verified",
+  "steps": [
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/writer-0270",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/independent-0470/before-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before-1.log",
+      "name": "before-1",
+      "outputs": {
+        "before-1.bin": "4d7c8d6ee5e0d64b0ab7193fb420a9a12d431918a2aba44da8c18967ad748af0",
+        "before-1.log": "731a6de04e2e2200e7e1f9c69332e487384e709894ec0e240f4d51fa425d42c7"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/writer-0270",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/independent-0470/before-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "before-2.log",
+      "name": "before-2",
+      "outputs": {
+        "before-2.bin": "4d7c8d6ee5e0d64b0ab7193fb420a9a12d431918a2aba44da8c18967ad748af0",
+        "before-2.log": "ee144b7d3ccffff933170492f7f5f98d1e225a9edbf9e026ebf344b9dce6a53e"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/writer-0470",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "write",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/independent-0470/target.bin",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/independent-0470/writer-readback.bin",
+        "1"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "program.log",
+      "name": "program",
+      "outputs": {
+        "program.log": "6e89b082446a98cd549c5f0b1b2e0a093422415008713c5181168fd666fa6ff5",
+        "writer-readback.bin": "e418d133fff0a3b656b45ffdcb225be9804732549fdcd44fde3e786ecfaf1a37"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/writer-0270",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/independent-0470/after-1.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-1.log",
+      "name": "after-1",
+      "outputs": {
+        "after-1.bin": "e418d133fff0a3b656b45ffdcb225be9804732549fdcd44fde3e786ecfaf1a37",
+        "after-1.log": "3641331585d98df015ea0cf285b55ac650f9a58861f4fdb203b99c0f6c206a59"
+      },
+      "status": "complete"
+    },
+    {
+      "command": [
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/writer-0270",
+        "--serial",
+        "6MNNWV7B0LLRDYCAA5PF5744",
+        "read",
+        "/Users/ddanila/fun/rom-programmers/sessions/20261121-a9-sticker-second/independent-0470/after-2.bin"
+      ],
+      "cwd": "None",
+      "exit_code": 0,
+      "log": "after-2.log",
+      "name": "after-2",
+      "outputs": {
+        "after-2.bin": "e418d133fff0a3b656b45ffdcb225be9804732549fdcd44fde3e786ecfaf1a37",
+        "after-2.log": "ee144b7d3ccffff933170492f7f5f98d1e225a9edbf9e026ebf344b9dce6a53e"
+      },
+      "status": "complete"
+    }
+  ],
+  "write_completed": true
+}
