@@ -267,7 +267,7 @@ operation remain unqualified with this workaround.
 
 ## RF2 backend integration — 2026-11-21
 
-MiniPro fork main commit `3e89e0fac87c9da21ab912cce2787aa3eaee8d07` enables
+MiniPro fork commit `3e89e0fac87c9da21ab912cce2787aa3eaee8d07` (on `bench`) enables
 the workaround for its RF2 `read` and `write` commands. `rom-programmers` pins
 that revision, so normal `t48-rf2` operations use it without experimental tools
 or extra flags. The generic `t48-2716-read` profile now uses `read2716` with the

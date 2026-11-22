@@ -6,7 +6,7 @@ owns profiles, orchestration, reproducible setup, and session evidence.
 
 | Project | Responsibility |
 | --- | --- |
-| [ddanila/minipro, main branch](https://github.com/ddanila/minipro/tree/main) | T48 driver fixes, contact checking, experimental RF2 tool |
+| [ddanila/minipro, bench branch](https://github.com/ddanila/minipro/tree/bench) | T48 driver fixes, contact checking, experimental RF2 tool |
 | [ddanila/willem-v30](https://github.com/ddanila/willem-v30) | DOS reader/writer, LPT signals, timing and emulation |
 | [ddanila/dosravi](https://github.com/ddanila/dosravi) | DOS transport, upload caching and execution recovery |
 | [ddanila/dumps](https://github.com/ddanila/dumps) | Preserved firmware acquisitions |
